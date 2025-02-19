@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="es"><head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Práctica 3 iframe - Red Dead Redemption</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #961c26;
+        }
+        table {
+            width: 75%;
+            margin: 20px auto;
+            border-collapse: collapse;
+        }
+        td {
+            text-align: center;
+        }
+        img {
+            width: 150px;
+            height: auto;
+            cursor: pointer;
+        }
+        iframe {
+            width: 80%;
+            height: 400px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin: 20px auto;
+        }
+        h1{
+            align-items: center;
+            font-family: Times New Roman;
+        }
+    </style>
+</head>
+<body>
+    <h1 style="text-align center">Personajes de "Red Dead Redemption"</h1>
+
+    <table>
+        <tbody><tr>
+            <td><img src="Pr%C3%A1ctica%203%20iframe%20Archivos/Arthur_Morgan.png" alt="Arthur Morgan" onclick="mostrarPersonaje('Arthur_Morgan.png')"></td>
+            <td><img src="Pr%C3%A1ctica%203%20iframe%20Archivos/Dutch.png" alt="Dutch van der Linde" onclick="mostrarPersonaje('Dutch.png')"></td>
+            <td><img src="Pr%C3%A1ctica%203%20iframe%20Archivos/Lenny.png" alt="Lenny Summers" onclick="mostrarPersonaje('Lenny.png')"></td>
+            <td><img src="Pr%C3%A1ctica%203%20iframe%20Archivos/JohnM_002.png" alt="John Marston" onclick="mostrarPersonaje('JohnM.png')"></td>
+        </tr>
+    </tbody></table>
+
+    <iframe id="Personajes" name="Personajes" src="Pr%C3%A1ctica%203%20iframe%20Archivos/JohnM_002.png"></iframe>
+
+    <script>
+        function mostrarPersonaje(src) {
+            document.getElementById('Personajes').src = src;
+        }
+    </script>
+
+</body></html>
