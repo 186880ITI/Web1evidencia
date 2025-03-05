@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+            <title>Formulario de Registro</title>
+            <style>      
+            body {
+            font-family: sans-serif;
+            margin: 10px;
+            background-color: #ADD8E6;
+            }
+            table {
+            width: 90%;
+            border-collapse: collapse;
+            }
+            td {
+            padding: 8px;
+            border: 1px solid gray;
+            justify-content: center;
+            }
+            input[type="text"],
+            input[type="password"],
+            input[type="email"],
+            input[type="date"],
+            input[type="number"],
+            select {
+            width: 100%;
+            padding: 6px;
+            margin-bottom: 8px;
+            border: 1px solid #ccc;
+            box-sizing: border-box;
+            }
+            input[type="submit"],
+            input[type="reset"] {
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            cursor: pointer;
+            }
+            .subtitulo {
+            font-weight: bold;
+            margin-bottom: 10px;
+            }
+            .alinear-derecha {
+            text-align: right;
+            }
+            .alinear-centro {
+            text-align: center;
+            }
+            .fecha {
+            font-size: 0.8em;
+            text-align: right;
+            margin-top: 20px;
+            }
+            h1{
+                font-family: 'Times New Roman', Times, serif;
+                font-size: 60px;
+                text-align: center;
+            }
+            h2{
+                font-family: 'Times New Roman', Times, serif;
+                font-size: 28px;
+                text-align: center;
+            }
+        </style>
+        </head>
+    <body>
+
+        <h1>Volkswagen Potosina</h1>
+        <h2>Compras online</h2>
+
+            <form action="#" method="post">
+                <table width="100%">
+                <tr>
+                    <td colspan="3"><div class="subtitulo">Información general del cliente</div></td>
+                </tr>
+                <tr>
+                    <td><label for="nombre">Nombre:</label><br><input type="text" id="nombre" name="nombre"></td>
+                    <td><label for="apellidoPaterno">Apellido paterno:</label><br><input type="text" id="apellidoPaterno" name="apellidoPaterno"></td>
+                    <td><label for="apellidoMaterno">Apellido materno:</label><br><input type="text" id="apellidoMaterno" name="apellidoMaterno"></td>
+                </tr>
+                <tr>
+                    <td><label for="nombreUsuario">Nombre de usuario:</label><br><input type="text" id="nombreUsuario" name="nombreUsuario"></td>
+                    <td><label for="contrasena">Password:</label><br><input type="password" id="contrasena" name="contrasena"></td>
+                    <td class="alinear-derecha"><label for="fechaRegistro">Fecha de registro dd/mm/aaaa:</label><br><input type="date" id="fechaRegistro" name="fechaRegistro"></td>
+                </tr>
+                <tr>
+                    <td colspan="3"><div class="subtitulo">Datos para facturar</div></td>
+                </tr>
+                <tr>
+                    <td><label for="pais">País:</label><br>
+                        <select id="pais" name="pais">
+                        <option value="mexico">México</option>
+                        <option value="estados-unidos">Estados Unidos</option>
+                        <option value="canada">Canadá</option>
+                        <option value="reino-unido">Reino Unido</option>
+                        <option value="alemania">Alemania</option>
+                        <option value="francia">Francia</option>
+                        <option value="italia">Italia</option>
+                        <option value="japon">Japón</option>
+                        <option value="china">China</option>
+                        <option value="australia">Australia</option>
+                        <option value="brasil">Brasil</option>
+                        <option value="argentina">Argentina</option>
+                        <option value="españa">España</option>
+                        <option value="india">India</option>
+                        <option value="rusia">Rusia</option>
+                        <option value="corea-del-sur">Corea del Sur</option>
+                        <option value="sudafrica">Sudáfrica</option>
+                        <option value="egipto">Egipto</option>
+                        <option value="paises-bajos">Países Bajos</option>
+                        <option value="suiza">Suiza</option>
+                        <option value="otra">Otra</option>
+                        </select>
+                    </td>
+                    <td><label for="ciudad">Ciudad:</label><br>
+                        <select id="ciudad" name="ciudad">
+                        <option value="san-luis-potosi">San Luis Potosí</option>
+                        <option value="soledad-de-graciano-sanchez">Soledad de Graciano Sánchez</option>
+                        <option value="matehuala">Matehuala</option>
+                        <option value="rio-verde">Rio Verde</option>
+                        <option value="ciudad-valles">Ciudad Valles</option>
+                        <option value="tamazunchale">Tamazunchale</option>
+                        <option value="santa-maria-del-rio">Santa María del Río</option>
+                        <option value="cedral">Cedral</option>
+                        <option value="salinas">Salinas</option>
+                        <option value="villa-de-reyes">Villa de Reyes</option>
+                        <option value="otros">Otros</option>
+                        </select>
+                    </td>
+                    <td><label for="calle">Calle:</label><br><input type="text" id="calle" name="calle"></td>
+                </tr>
+                <tr>
+                    <td><label for="numeroCasa">Número de casa:</label><br><input type="number" id="numeroCasa" name="numeroCasa"></td>
+                    <td><label for="colonia">Colonia:</label><br><input type="text" id="colonia" name="colonia"></td>
+                    <td><label for="email">E-mail:</label><br><input type="email" id="email" name="email"></td>
+                </tr>
+                <tr>
+                    <td><label for="rfc">R.F.C.:</label><br><input type="text" id="rfc" name="rfc"></td>
+                    <td><label for="cp">C.P.:</label><br><input type="text" id="cp" name="cp"></td>
+                    <td class="alinear-centro"><label><input type="checkbox" name="terminos" value="aceptado"> Acepto términos y condiciones</label></td>
+                </tr>
+                <tr>
+                    <td colspan="3" class="alinear-centro">
+                    <input type="submit" value="Enviar">
+                    <input type="reset" value="Restablecer">
+                    </td>
+                </tr>
+                </table>
+            </form>
+
+        <div class="fecha">Febrero 2025, SLP.</div>
+
+</body>
+</html>
