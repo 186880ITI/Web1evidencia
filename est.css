@@ -1,0 +1,52 @@
+.navbar{
+        position: fixed;
+    top: 0;
+    width: 100%;
+    background-color: #333;
+    color: rgb(238, 222, 180);
+    padding: 10px 0;
+    text-align: center;
+    z-index: 1000;
+}
+.navbar a{
+    color: rgb(0, 0, 0);
+    padding: 14px 20px;
+    text-decoration: none;
+    display: inline-block;
+}
+.navbar a:hover{
+    background-color: #575757;
+}
+.content{
+    padding: 60px 20px;
+    margin: auto;
+}
+.capa1{
+    margin-left: 25%;
+    padding: 12px;
+    height: 1000px;
+}
+ul{
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    width: 20%;
+    height: 100%;
+    position: fixed;
+    background-color: antiquewhite;
+    overflow: auto;
+}
+h1{
+    font-family: Arial, Helvetica, sans-serif;
+}
+h2{
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+@font-face{
+    font-family: "parrafos";
+    src: url(fuentes/f1.ttf) format("truetype");
+}
+p{
+    font-family: 'parrafos';
+    text-align: justify;
+}

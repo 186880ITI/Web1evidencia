@@ -1,0 +1,28 @@
+ul{
+    list-style-type: none;
+    margin: 0%;
+    padding: 0%;
+    width: 25%;
+}
+li a{
+    display: block;
+    background-color: cornsilk;
+    padding: 8px 10px;
+    text-decoration: none;
+    color: black;
+}
+li a:hover{
+    background-color: antiquewhite;
+    color: darkgray;
+}
+li a.activo{
+    background-color: darkcyan;
+    color: aquamarine;
+}
+li a:hover:not(.activo){
+    background-color: azure;
+    color: cadetblue;
+}
+h1{
+    font-family: Arial, Helvetica, sans-serif, cursive;
+}
