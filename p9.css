@@ -1,0 +1,114 @@
+body {
+    font-family: sans-serif;
+    line-height: 1.6;
+    margin: 20px;
+    background-color: #F8F3D9; /* #F8F3D9 #EBE5C2 #B9B28A #504B38 */
+    color: #333;
+}
+h1, h2 {
+    color: #504B38;
+    text-align: center;
+    margin-bottom: 20px;
+    font-family: 'Times New Roman', Times, serif;
+    background-color: #fffdf0;
+}
+.container {
+    background-color: #F8F3D9;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    margin-bottom: 30px;
+}
+.absolute-units, .relative-units {
+    border: 1px solid #ccc;
+    padding: 15px;
+    margin-bottom: 20px;
+    border-radius: 5px;
+}
+h3 {
+    margin-top: 0;
+    color: #555;
+    border-bottom: 2px solid #eee;
+    padding-bottom: 5px;
+    margin-bottom: 10px;
+}
+.example {
+    background-color: #EBE5C2;
+    padding: 10px;
+    margin-bottom: 10px;
+    border-radius: 4px;
+}
+.example-box-absolute {
+    width: 100px; 
+    height: 50px; 
+    background-color: #B9B28A;
+    color: white;
+    text-align: center;
+    line-height: 50px;
+    font-size: 16px; 
+    margin-bottom: 10px;
+}
+.example-box-relative-em {
+    font-size: 1em; 
+}
+.example-box-relative-em .child-em {
+    font-size: 1.5em; 
+    background-color: #B9B28A;
+    color: white;
+    padding: 5px;
+}
+.example-box-relative-rem {
+    font-size: 16px;
+}
+.example-box-relative-rem .child-rem {
+    font-size: 1.2rem;
+    background-color: #B9B28A;
+    color: white;
+    padding: 5px;
+}
+.example-box-relative-vwvh {
+    width: 50vw;
+    height: 20vh; 
+    background-color: lightgoldenrodyellow;
+    text-align: center;
+    line-height: 20vh;
+}
+.example-box-relative-percent-parent {
+    width: 200px;
+    height: 100px;
+    background-color: #ccc;
+    position: relative;
+    margin-bottom: 10px;
+}
+.example-box-relative-percent-child {
+    width: 50%; 
+    height: 50%; 
+    background-color: #B9B28A;
+    position: absolute;
+    top: 25%;
+    left: 25%;
+    text-align: center;
+    line-height: 50px;
+    color: white;
+}
+.change-example {
+    margin-top: 15px;
+    padding: 10px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+.change-example:hover {
+    background-color: #0056b3;
+}
+.output {
+    margin-top: 10px;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    background-color: #f9f9f9;
+    font-size: 0.9em;
+    white-space: pre-wrap;
+}

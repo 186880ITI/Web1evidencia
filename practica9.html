@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="p9.css">
+    <title>Practica 9: Ejemplos de Unidades de Medida en CSS</title>
+</head>
+<body>
+    <div class="container">
+        <h1>Unidades de Medida en CSS</h1>
+        <p>Esta página muestra ejemplos de diferentes unidades de medida absolutas y relativas utilizadas en CSS. Puedes experimentar cambiando los valores en el código CSS (en la sección <code>&lt;style&gt;</code>) para ver cómo afectan a la presentación de los elementos.</p>
+
+        <div class="absolute-units">
+            <h3>Unidades de Medida Absolutas</h3>
+            <p>Las unidades absolutas tienen un tamaño fijo y no dependen de ningún otro elemento o configuración. Generalmente se recomiendan para medios impresos o cuando se necesita una precisión absoluta.</p>
+            <div class="example">
+                <h4><code>px</code> (píxeles)</h4>
+                <p>Representan un punto en la pantalla (aunque la densidad de píxeles puede variar entre dispositivos).</p>
+                <div class="example-box-absolute">100px x 50px</div>
+                <p><strong>Prueba a cambiar:</strong> El <code>width</code> a <code>150px</code> o el <code>background-color</code> a <code>lightblue</code>.</p>
+                <pre class="output"><code>
+.example-box-absolute {
+    width: 100px; /* Intenta cambiar a 150px */
+    height: 50px;
+    background-color: lightcoral; /* Intenta cambiar a lightblue */
+    color: white;
+    text-align: center;
+    line-height: 50px;
+    font-size: 16px;
+    margin-bottom: 10px;
+}
+                </code></pre>
+            </div>
+            </div>
+
+        <div class="relative-units">
+            <h3>Unidades de Medida Relativas</h3>
+            <p>Las unidades relativas basan su tamaño en otro valor, como el tamaño de la fuente del elemento padre o del elemento raíz (<code>&lt;html&gt;</code>), o el tamaño de la ventana del navegador.</p>
+
+            <div class="example">
+                <h4><code>em</code></h4>
+                <p>Relativo al tamaño de la fuente del elemento padre.</p>
+                <div class="example-box-relative-em" style="font-size: 16px;">
+                    Texto con tamaño base
+                    <div class="child-em">Texto 1.5em (24px si el padre es 16px)</div>
+                </div>
+                <p><strong>Prueba a cambiar:</strong> El <code>font-size</code> del elemento padre (<code>.example-box-relative-em</code>) a <code>20px</code> y observa cómo afecta al hijo.</p>
+                <pre class="output"><code>
+.example-box-relative-em {
+    font-size: 16px; /* Intenta cambiar a 20px */
+}
+
+.example-box-relative-em .child-em {
+    font-size: 1.5em;
+    background-color: lightseagreen;
+    color: white;
+    padding: 5px;
+}
+                </code></pre>
+            </div>
+
+            <div class="example">
+                <h4><code>rem</code></h4>
+                <p>Relativo al tamaño de la fuente del elemento raíz (<code>&lt;html&gt;</code>).</p>
+                <div class="example-box-relative-rem">
+                    Texto con tamaño base (depende del &lt;html&gt;)
+                    <div class="child-rem">Texto 1.2rem (si el html tiene 16px, esto será 19.2px)</div>
+                </div>
+                <p><strong>Prueba a cambiar:</strong> El <code>font-size</code> del selector <code>html</code> en la parte superior del <code>&lt;style&gt;</code> a <code>20px</code> y observa el cambio.</p>
+                <pre class="output"><code>
+html {
+    font-size: 16px; /* Intenta cambiar a 20px */
+}
+
+.example-box-relative-rem .child-rem {
+    font-size: 1.2rem;
+    background-color: lightskyblue;
+    color: white;
+    padding: 5px;
+}
+                </code></pre>
+            </div>
+
+            <div class="example">
+                <h4><code>vw</code> y <code>vh</code></h4>
+                <p>Relativo al 1% del ancho (<code>vw</code>) y la altura (<code>vh</code>) de la ventana del navegador.</p>
+                <div class="example-box-relative-vwvh">50vw x 20vh</div>
+                <p><strong>Prueba a cambiar:</strong> Los valores de <code>width</code> y <code>height</code> a <code>70vw</code> y <code>30vh</code> respectivamente, y redimensiona la ventana del navegador.</p>
+                <pre class="output"><code>
+.example-box-relative-vwvh {
+    width: 50vw; /* Intenta cambiar a 70vw */
+    height: 20vh; /* Intenta cambiar a 30vh */
+    background-color: lightgoldenrodyellow;
+    text-align: center;
+    line-height: 20vh;
+}
+                </code></pre>
+            </div>
+
+            <div class="example">
+                <h4><code>%</code> (porcentaje)</h4>
+                <p>Relativo al tamaño del elemento padre.</p>
+                <div class="example-box-relative-percent-parent">
+                    <div class="example-box-relative-percent-child">50% x 50%</div>
+                </div>
+                <p><strong>Prueba a cambiar:</strong> El <code>width</code> del padre (<code>.example-box-relative-percent-parent</code>) a <code>300px</code> o el <code>background-color</code> del hijo a <code>purple</code>.</p>
+                <pre class="output"><code>
+.example-box-relative-percent-parent {
+    width: 200px; /* Intenta cambiar a 300px */
+    height: 100px;
+    background-color: #ccc;
+    position: relative;
+    margin-bottom: 10px;
+}
+
+.example-box-relative-percent-child {
+    width: 50%;
+    height: 50%;
+    background-color: orange; /* Intenta cambiar a purple */
+    position: absolute;
+    top: 25%;
+    left: 25%;
+    text-align: center;
+    line-height: 50px;
+    color: white;
+}
+                </code></pre>
+            </div>
+
+            </div>
+    </div>
+</body>
+</html>
