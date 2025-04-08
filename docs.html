@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="docs.css">
+    <title>Practica 6</title>
+</head>
+<body>
+    <div id="biblioteca">
+        <button onclick="mostrarDocumento('Etapa-1.pdf')"> Diseño y Planificación </button>
+        <button onclick="mostrarDocumento('Presupuesto-del-Proyecto.xslx')"> Presupuesto excel </button>
+        <button onclick="mostrarDocumento('Presupuesto-del-Proyecto.pdf')"> Presupuesto (PDF) </button>
+        </div>
+    <div id="contenedor-iframe">
+        <iframe id="Iframe" src="" frameborder="0"></iframe>
+    </div>
+    <script>
+        function mostrarDocumento(url) {
+            document.getElementById('Iframe').src = url;
+        }
+    </script>
+
+</body>
+</html>
