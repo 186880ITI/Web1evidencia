@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Calcula tu Propina</title>
+    <link rel="stylesheet" type="text/css" href="examen2.css">
+    <header>
+        <h1> Evaluación práctica P3 </h1>
+    </header>
+</head>
+<body>
+    <div class="container">
+        <h2>Calcula tu Propina</h2>
+        <label for="totalCuenta">Total a pagar:</label>
+        <input type="number" id="totalCuenta" placeholder="Ej: 150" required>
+        <br><br>
+
+        <label for="porcentajePropina">Porcentaje a aplicar:</label>
+        <input type="number" id="porcentajePropina" list="opcionesPorcentaje" placeholder="Ej: 10" required>
+        <datalist id="opcionesPorcentaje">
+            <option value="5">
+            <option value="10">
+            <option value="15">
+            <option value="20">
+        </datalist>
+        <br><br>
+
+        <button onclick="calcularPropina()">Realizar el cálculo</button>
+        <br><br>
+
+        <div id="resultados">
+            <p>Propina: <span id="propinaCalculada">$0.00</span></p>
+            <p>Total a pagar: <span id="totalPagar">$0.00</span></p>
+        </div>
+    </div>
+
+    <script type="text/Javascript" src="examen2.js"></script>
+</body>
+</html>
