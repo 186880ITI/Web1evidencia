@@ -1,0 +1,501 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>Formulario de Compra - Volkswagen Potosina</title>
+    <link rel="stylesheet" type="text/css" href="boceto.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/pdfMake/0.2.7/pdfMake.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/pdfMake/0.2.7/vfs_fonts.min.js"></script>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+            color: #333;
+        }
+        .container {
+            width: 85%;
+            margin: 20px auto;
+            background-color: #fff;
+            padding: 25px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        header {
+            background-color: #004d99;
+            color: white;
+            padding: 10px 0;
+            text-align: center;
+            margin-bottom: 20px;
+            border-radius: 8px 8px 0 0;
+        }
+        header h1 {
+            margin: 0;
+            font-size: 2em;
+        }
+        header h2 {
+            margin: 5px 0 0;
+            font-size: 1.2em;
+            font-weight: normal;
+        }
+        nav {
+            margin-top: 10px;
+        }
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin: 0 15px;
+            font-weight: bold;
+        }
+        nav a:hover {
+            text-decoration: underline;
+        }
+        fieldset {
+            border: 1px solid #c0d9ec;
+            padding: 20px;
+            margin-bottom: 20px;
+            border-radius: 5px;
+            background-color: #e6f2ff;
+        }
+        legend {
+            font-weight: bold;
+            color: #004d99;
+            padding: 0 10px;
+            background-color: #e6f2ff;
+            border-radius: 3px;
+        }
+        label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: bold;
+            color: #555;
+        }
+        input[type="text"],
+        input[type="password"],
+        input[type="number"],
+        input[type="email"],
+        input[type="url"],
+        select,
+        textarea {
+            width: calc(100% - 22px);
+            padding: 10px;
+            margin-bottom: 15px;
+            border: 1px solid #a0c3e0;
+            border-radius: 4px;
+            box-sizing: border-box;
+            font-size: 1em;
+        }
+        input[type="checkbox"] {
+            margin-right: 8px;
+            margin-bottom: 10px;
+        }
+        input[type="submit"],
+        input[type="reset"] {
+            background-color: #007bff;
+            color: white;
+            padding: 12px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 1.1em;
+            margin-right: 10px;
+            transition: background-color 0.3s ease;
+        }
+        input[type="submit"]:hover,
+        input[type="reset"]:hover {
+            background-color: #0056b3;
+        }
+        textarea {
+            resize: vertical;
+            min-height: 80px;
+        }
+        footer {
+            text-align: center;
+            margin-top: 30px;
+            padding-top: 15px;
+            border-top: 1px solid #eee;
+            color: #777;
+            font-size: 0.9em;
+        }
+        .form-row {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+        .form-group {
+            flex: 1;
+            min-width: 250px;
+        }
+        #resultado-calificacion {
+            margin-top: 30px;
+            padding: 20px;
+            border: 1px solid #4CAF50;
+            background-color: #e8f5e9;
+            border-radius: 8px;
+            display: none;
+        }
+        #resultado-calificacion h3 {
+            color: #2e7d32;
+            margin-bottom: 15px;
+        }
+        #puntos-obtenidos-grafico {
+            width: 100%;
+            height: 150px;
+            background-color: #f0f0f0;
+            border: 1px solid #ccc;
+            margin-top: 15px;
+            position: relative;
+            overflow: hidden;
+            border-radius: 5px;
+        }
+        .grafico-punto {
+            position: absolute;
+            background-color: #007bff;
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            transform: translate(-50%, -50%);
+            animation: appear 0.5s ease-out forwards;
+            opacity: 0;
+        }
+        @keyframes appear {
+            from {
+                opacity: 0;
+                transform: translate(-50%, -50%) scale(0);
+            }
+            to {
+                opacity: 1;
+                transform: translate(-50%, -50%) scale(1);
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <div class="header-content">
+                <h1>Volkswagen Potosina</h1>
+                <h2>Compras online</h2>
+                <nav>
+                    <a rel="icon" type="image/jpg" href="index.html"> <img src="logomarca.jpg" width="50px" height="30px" alt="Logo"> </a>
+                    <a href="inicio.html">Inicio</a>
+                    <a href="catalogo.html">Catálogo</a>
+                    <a href="Compra.html">Compra</a>
+                    <a href="contacto.html">Contactos</a>
+                    <a href="soporte.html">Soporte </a>
+                </nav>
+            </div>
+        </header>
+
+        <section>
+            <form id="compraForm" method="post" action="#" enctype="application/x-www-form-urlencoded">
+                <fieldset>
+                    <legend>Información general del cliente</legend>
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="nombre">Nombre:</label>
+                            <input type="text" maxlength="25" placeholder="Nombre" name="nombre" id="nombre" autofocus required/>
+                        </div>
+                        <div class="form-group">
+                            <label for="ap">Apellido paterno:</label>
+                            <input type="text" maxlength="25" placeholder="Apellido paterno" name="ap" id="ap" required/>
+                        </div>
+                        <div class="form-group">
+                            <label for="am">Apellido materno:</label>
+                            <input type="text" maxlength="25" placeholder="Apellido materno" name="am" id="am" required/>
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="user">Nombre de usuario:</label>
+                            <input type="text" maxlength="25" placeholder="Usuario" name="user" id="user" required/>
+                        </div>
+                        <div class="form-group">
+                            <label for="pass">Contraseña:</label>
+                            <input type="password" maxlength="25" placeholder="Password" name="pass" id="pass" required/>
+                        </div>
+                        <div class="form-group">
+                            <label for="fecha_registro">Fecha de registro:</label>
+                            <input type="date" name="fecha_registro" id="fecha_registro" required/>
+                        </div>
+                    </div>
+                </fieldset>
+
+                <fieldset>
+                    <legend>Datos para facturar</legend>
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="pais">País:</label>
+                            <select name="pais" id="pais" size="3" required>
+                                <option value="Mexico">México</option>
+                                <option value="Canada">Canadá</option>
+                                <option value="Reino Unido">Reino Unido</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="ciudad">Ciudad:</label>
+                            <select name="ciudad" id="ciudad" size="3" required>
+                                <option value="San Luis Potosi">San Luis Potosí</option>
+                                <option value="Monterrey">Monterrey</option>
+                                <option value="Cd. Valles">Cd. Valles</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="calle">Calle:</label>
+                            <input type="text" maxlength="50" placeholder="Calle" name="calle" id="calle" required/>
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="numero">Número exterior:</label>
+                            <input type="text" name="numero" id="numero" placeholder="Num. Exterior" maxlength="20" required/>
+                        </div>
+                        <div class="form-group">
+                            <label for="colonia">Colonia:</label>
+                            <input type="text" name="colonia" id="colonia" placeholder="Colonia" required/>
+                        </div>
+                        <div class="form-group">
+                            <label for="correo">E-mail:</label>
+                            <input type="email" maxlength="50" placeholder="E-mail" name="correo" id="correo" required/>
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="cp">C.P.:</label>
+                            <input type="number" name="cp" id="cp" placeholder="Código Postal" required/>
+                        </div>
+                        <div class="form-group">
+                            <label for="rfc">R.F.C.:</label>
+                            <input type="text" name="rfc" id="rfc" placeholder="R.F.C."/>
+                        </div>
+                        <div class="form-group">
+                            <input type="checkbox" name="terminos" id="terminos" required/>
+                            <label for="terminos" style="display: inline;">Acepto términos y condiciones</label>
+                        </div>
+                    </div>
+                </fieldset>
+
+                <fieldset>
+                    <legend>Datos del artículo adquirido</legend>
+                    <label for="marca">Tipo de artículo</label><br/>
+                    <select name="marca" id="marca" size="2" required>
+                        <option value="digital">Versión digital</option>
+                        <option value="fisico">Versión física</option>
+                    </select><br/>
+                    <label>Selecciona tu juego:</label><br/>
+                    <input type="checkbox" name="producto[]" value="Super Mario Bros">Super Mario Bros<br/>
+                    <input type="checkbox" name="producto[]" value="Super Mario Bros 2">Super Mario Bros 2<br/>
+                    <input type="checkbox" name="producto[]" value="Super Mario Bros 3">Super Mario Bros 3<br/>
+                    <input type="checkbox" name="producto[]" value="Call of Duty black ops 3">Call of Duty black ops 3<br/>
+                    <input type="checkbox" name="producto[]" value="Minecraft">Minecraft<br/>
+                    <input type="checkbox" name="producto[]" value="Far Cry 3">Far Cry 3<br/>
+                    <input type="checkbox" name="producto[]" value="Assasin's Creed III">Assasin's Creed III<br/>
+                    <input type="checkbox" name="producto[]" value="Call of Gruty">Call of Gruty<br/>
+                    <input type="checkbox" name="producto[]" value="Dead Island">Dead Island<br/>
+                    <input type="checkbox" name="producto[]" value="Red dead redemption II">Red dead redemption II<br/>
+                    <input type="checkbox" name="producto[]" value="Halo 3">Halo 3<br/>
+                    <input type="checkbox" name="producto[]" value="Metal Gear solid V">Metal Gear solid V<br/>
+                    <input type="checkbox" name="producto[]" value="Fifa 18">Fifa 18<br/>
+                    <input type="checkbox" name="producto[]" value="Hogwarts Legacy">Hogwarts Legacy<br/>
+                    <br/>
+                    <label for="comentarios">Datos adicionales (comentarios, especificaciones):</label>
+                    <textarea name="comentarios" id="comentarios" rows="4"></textarea><br/>
+                </fieldset>
+
+                <input type="submit" name="enviar" id="enviar" value="Enviar datos y Generar PDF">
+                <input type="reset" name="borrar" id="borrar" value="Restablecer">
+            </form>
+
+            <p style="margin-top: 20px; font-style: italic; color: #666;">
+                *NOTA: La dirección de envío será la misma que la dirección de facturación (en caso de ser físico) y la versión digital será enviada al correo proporcionado.
+            </p>
+
+            <div id="resultado-calificacion">
+                <h3>Resultados del Formulario</h3>
+                <p id="calificacion-texto"></p>
+                <div id="puntos-obtenidos-grafico"></div>
+            </div>
+        </section>
+
+        <footer>
+            <p>Febrero 2025, SLP.</p>
+            <h3>&copy; Distribuidor autorizado de productos de calidad.</h3>
+        </footer>
+    </div>
+
+    <script>
+        document.getElementById('compraForm').addEventListener('submit', function(event) {
+            event.preventDefault();
+
+            const form = this;
+            const formData = new FormData(form);
+            let puntosObtenidos = 0;
+
+            let allFieldsFilled = true;
+            form.querySelectorAll('input[required], select[required], textarea[required]').forEach(input => {
+                if (!input.value.trim() && input.type !== 'checkbox') {
+                    allFieldsFilled = false;
+                    input.style.borderColor = 'red';
+                } else {
+                    input.style.borderColor = '#a0c3e0';
+                }
+            });
+
+            const juegosSeleccionados = formData.getAll('producto[]');
+            if (juegosSeleccionados.length === 0) {
+
+            } else {
+                puntosObtenidos += juegosSeleccionados.length * 5;
+            }
+
+            if (!document.getElementById('terminos').checked) {
+                alert('Debes aceptar los términos y condiciones.');
+                allFieldsFilled = false;
+            } else {
+                puntosObtenidos += 10;
+            }
+
+
+            if (!allFieldsFilled) {
+                alert('Por favor, completa todos los campos obligatorios.');
+                return;
+            }
+
+            puntosObtenidos += 20;
+
+            const resultadoDiv = document.getElementById('resultado-calificacion');
+            const calificacionTexto = document.getElementById('calificacion-texto');
+            calificacionTexto.textContent = `Has obtenido ${puntosObtenidos} puntos en tu llenado del formulario.`;
+            resultadoDiv.style.display = 'block';
+
+            const graficoDiv = document.getElementById('puntos-obtenidos-grafico');
+            graficoDiv.innerHTML = '';
+            const numPuntos = Math.min(puntosObtenidos / 10, 10);
+            for (let i = 0; i < numPuntos; i++) {
+                const punto = document.createElement('div');
+                punto.classList.add('grafico-punto');
+                punto.style.left = `${Math.random() * 90 + 5}%`;
+                punto.style.top = `${Math.random() * 90 + 5}%`;
+                punto.style.animationDelay = `${i * 0.1}s`;
+                graficoDiv.appendChild(punto);
+            }
+
+            let pdfContent = {
+                cliente: {
+                    nombre: formData.get('nombre'),
+                    apellido_paterno: formData.get('ap'),
+                    apellido_materno: formData.get('am'),
+                    usuario: formData.get('user'),
+                    contrasena: formData.get('pass'),
+                    fecha_registro: formData.get('fecha_registro')
+                },
+                facturacion: {
+                    pais: formData.get('pais'),
+                    ciudad: formData.get('ciudad'),
+                    calle: formData.get('calle'),
+                    numero: formData.get('numero'),
+                    colonia: formData.get('colonia'),
+                    correo: formData.get('correo'),
+                    cp: formData.get('cp'),
+                    rfc: formData.get('rfc'),
+                    terminos_aceptados: document.getElementById('terminos').checked ? 'Sí' : 'No'
+                },
+                articulo: {
+                    tipo_articulo: formData.get('marca'),
+                    juegos: formData.getAll('producto[]'),
+                },
+                adicionales: formData.get('comentarios'),
+                calificacion_obtenida: puntosObtenidos
+            };
+
+            const documentDefinition = {
+                content: [
+                    { text: 'Comprobante de Compra - Volkswagen Potosina', style: 'header' },
+                    { text: 'Fecha de Generación: ' + new Date().toLocaleDateString(), style: 'dateInfo' },
+                    { text: '\n' },
+
+                    { text: 'Información General del Cliente', style: 'sectionTitle' },
+                    { text: 'Nombre Completo: ', style: 'question' },
+                    { text: `${pdfContent.cliente.nombre} ${pdfContent.cliente.apellido_paterno} ${pdfContent.cliente.apellido_materno}`, style: 'answer' },
+                    { text: 'Nombre de Usuario: ', style: 'question' },
+                    { text: pdfContent.cliente.usuario, style: 'answer' },
+                    { text: 'Fecha de Registro: ', style: 'question' },
+                    { text: pdfContent.cliente.fecha_registro, style: 'answer' },
+                    { text: '\n' },
+
+                    { text: 'Datos de Facturación', style: 'sectionTitle' },
+                    { text: 'País: ', style: 'question' },
+                    { text: pdfContent.facturacion.pais, style: 'answer' },
+                    { text: 'Ciudad: ', style: 'question' },
+                    { text: pdfContent.facturacion.ciudad, style: 'answer' },
+                    { text: 'Calle y Número: ', style: 'question' },
+                    { text: `${pdfContent.facturacion.calle}, ${pdfContent.facturacion.numero}`, style: 'answer' },
+                    { text: 'Colonia: ', style: 'question' },
+                    { text: pdfContent.facturacion.colonia, style: 'answer' },
+                    { text: 'Correo Electrónico: ', style: 'question' },
+                    { text: pdfContent.facturacion.correo, style: 'answer' },
+                    { text: 'Código Postal: ', style: 'question' },
+                    { text: pdfContent.facturacion.cp, style: 'answer' },
+                    { text: 'R.F.C.: ', style: 'question' },
+                    { text: pdfContent.facturacion.rfc || 'No especificado', style: 'answer' },
+                    { text: 'Términos y Condiciones Aceptados: ', style: 'question' },
+                    { text: pdfContent.facturacion.terminos_aceptados, style: 'answer' },
+                    { text: '\n' },
+
+                    { text: 'Datos del Artículo Adquirido', style: 'sectionTitle' },
+                    { text: 'Tipo de Artículo: ', style: 'question' },
+                    { text: pdfContent.articulo.tipo_articulo, style: 'answer' },
+                    { text: 'Juegos Seleccionados: ', style: 'question' },
+                    { text: pdfContent.articulo.juegos.length > 0 ? pdfContent.articulo.juegos.join(', ') : 'Ninguno', style: 'answer' },
+                    { text: '\n' },
+
+                    { text: 'Datos Adicionales', style: 'sectionTitle' },
+                    { text: pdfContent.adicionales || 'Ninguno', style: 'answer' },
+                    { text: '\n' },
+
+                    { text: 'Calificación Obtenida:', style: 'sectionTitle' },
+                    { text: `Puntos: ${pdfContent.calificacion_obtenida}`, style: 'answer' }
+                ],
+                styles: {
+                    header: {
+                        fontSize: 20,
+                        bold: true,
+                        alignment: 'center',
+                        marginBottom: 20,
+                        color: '#004d99'
+                    },
+                    dateInfo: {
+                        fontSize: 10,
+                        alignment: 'right',
+                        color: '#666'
+                    },
+                    sectionTitle: {
+                        fontSize: 14,
+                        bold: true,
+                        marginTop: 15,
+                        marginBottom: 8,
+                        color: '#007bff'
+                    },
+                    question: {
+                        fontWeight: 'bold',
+                        marginBottom: 2,
+                        marginTop: 5,
+                        color: '#333'
+                    },
+                    answer: {
+                        marginLeft: 15,
+                        marginBottom: 8,
+                        color: '#555'
+                    }
+                },
+                defaultStyle: {
+                    columnGap: 20
+                }
+            };
+
+            pdfMake.createPdf(documentDefinition).download('comprobante_compra_vw_potosina.pdf');
+        });
+    </script>
+</body>
+</html>
