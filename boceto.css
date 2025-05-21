@@ -1,0 +1,371 @@
+body{
+    font-family: sans-serif;
+    margin: 15px;
+    background-color:#dfdcd7 ; 
+    /* PALETA DE COLORE: https://colorhunt.co/palette/f1efecd4c9be123458030303 
+    F1EFEC D4C9BE 123458 030303*/
+}
+@font-face{
+    font-family: Barranav;
+    src: url(fuentes/Barranav/DynaPuff-Bold.ttf); /* Tipos de letra */
+}
+@font-face {
+    font-family: parrafos;
+    src: url(fuentes/parrafos/DynaPuff-Regular.ttf);
+}
+@font-face {
+    font-family: titulojuegos;
+    src: url(fuentes/titulojuegos/RubikIso-Regular.ttf);
+}
+@font-face {
+    font-family: parrafos2;
+    src: url(fuentes/static/RedHatText-Bold.ttf);
+}
+nav{
+    background-color: #333; /* barra de navegacion */
+    overflow: hidden;
+    display: flex;
+    margin: auto;
+    border-radius: 5px;
+    flex-flow: row wrap;
+    justify-content: space-evenly;
+    align-items: flex-start;
+    font-family: Barranav;
+    font-size: 10px;
+}
+nav a{
+    float: inline-start;
+    display: flex;
+    color: white;
+    text-align: center;
+    padding: 15px 20px;
+    text-decoration: none;
+    border-radius: 5px;
+    font-size: 25px;
+    align-items: center;
+    
+}
+nav a:hover{
+    background-color: #F1EFEC;
+    color: #030303;
+    transform: scale(1.5);
+    transition: transform 0.4s ease-in;
+    display: flex;
+    
+}
+
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 15px auto;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 20px;
+}
+
+.box {
+    border: 1px solid #ccc;
+    padding: 15px;
+    text-align: center;
+    background: #D4C9BE;
+    border-radius: 8px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    transition: transform 0.5s ease, background-color 0.3s ease;
+}
+
+.box:hover {
+    transform: scale(1.05);
+    background-color: #c0b5ac;
+    z-index: 1;
+}
+
+.box img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 5px;
+    margin-bottom: 10px;
+    display: block;
+}
+
+.box p {
+    font-weight: bold;
+    color: #333;
+    margin: 0;
+    word-wrap: break-word;
+}
+
+@media (max-width: 500px) {
+    .container {
+        gap: 15px;
+    }
+    .box {
+        padding: 10px;
+    }
+    .box:hover {
+        transform: none;
+    }
+}
+
+hr {
+    border: 2px solid #000;
+    width: 80%;
+    margin: 30px auto;
+}
+table{
+    padding: 10px;
+    margin: auto;
+}
+td{
+    width: 50%;
+}
+h1{
+   font-family: titulojuegos; /* Tipos de texto (titulo de juegos) */
+   font-size: 50px;
+   text-align: center;
+   color: #123458 ;
+}
+h2 {
+    text-align:center;
+    font-family: parrafos2; /* Titulos de paginas */
+    font-size: 35px;
+}
+h3{
+    text-align: left;
+    font-size: 20px; /* Parrafos de paginas */
+    font-family: parrafos2;
+}
+h4{
+    text-align: center;
+    font-family: parrafos2; /* subtitulos */
+    font-size: 20px;
+}
+a{
+    text-decoration: none;
+    color: #202020;
+}
+section{ 
+    margin: 30px; /* Divisiones */
+}
+article{
+    text-align: justify;
+    margin: 30px 0;
+}
+p{
+    text-align: justify;
+    color: #202020;
+    font-family: parrafos;
+    font-size: 20px;
+    padding: 10px;
+}
+ul{
+    text-align: justify;
+    font-family: parrafos;
+    color: #202020;
+    font-size:20px;
+    padding: 10px;
+}
+ol{
+    text-align: justify;
+    font-family: parrafos;
+    color: #202020;
+    padding: 10px;
+}
+footer{
+    background-color: #202020;
+    text-align: center;
+    font-family: parrafos;
+    font-size: 23px;
+    color: whitesmoke;
+}
+
+        .game-details {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 20px;
+            max-width: 960px; 
+            margin: 20px auto; 
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        }
+        .game-image { 
+            margin-bottom: 20px;
+        }
+        .game-image img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+        .game-info {
+            text-align: center;
+            margin-bottom: 30px;
+            padding: 0 20px; 
+        }
+        .game-info h1 {
+            font-size: 2.5em;
+            color: #333;
+            margin-bottom: 10px;
+        }
+        .game-info h2 {
+            font-size: 1.8em;
+            color: #555;
+            margin-top: 15px;
+            margin-bottom: 10px;
+        }
+        .game-info h3 {
+            font-size: 1.1em;
+            color: #777;
+            line-height: 1.6;
+            margin-bottom: 10px;
+        }
+        .main-content-viewer {
+            width: 100%; 
+            aspect-ratio: 16 / 9; 
+            background-color: #000; 
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            overflow: hidden; 
+            border-radius: 5px; 
+        }
+
+        .main-content-viewer img,
+        .main-content-viewer video {
+            max-width: 100%;
+            max-height: 100%;
+            object-fit: contain; 
+        }
+
+        .game-gallery-section { 
+            width: 90%; 
+            margin: 30px auto;
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+        }
+
+        .game-gallery-section h2 {
+            text-align: center;
+            color: #333;
+            margin-bottom: 20px;
+            font-size: 2em;
+        }
+
+        .image-gallery-container {
+            display: flex;
+            overflow-x: auto; 
+            padding: 10px 0; 
+            margin-top: 20px;
+            gap: 10px; 
+            justify-content: center; 
+            scrollbar-width: thin; 
+            scrollbar-color: #888 #f1f1f1; 
+        }
+
+
+        .image-gallery-container::-webkit-scrollbar {
+            height: 8px;
+        }
+
+        .image-gallery-container::-webkit-scrollbar-track {
+            background: #f1f1f1;
+            border-radius: 10px;
+        }
+
+        .image-gallery-container::-webkit-scrollbar-thumb {
+            background: #888;
+            border-radius: 10px;
+        }
+
+        .image-gallery-container::-webkit-scrollbar-thumb:hover {
+            background: #555;
+        }
+
+        .gallery-item {
+            width: 120px;
+            height: 90px; 
+            flex-shrink: 0;
+            cursor: pointer;
+            border: 2px solid transparent;
+            border-radius: 5px;
+            overflow: hidden;
+            transition: border-color 0.3s ease, transform 0.2s ease;
+        }
+
+        .gallery-item:hover {
+            border-color: #007bff;
+            transform: translateY(-3px); 
+        }
+        .gallery-item.active {
+            border-color: #28a745; 
+            box-shadow: 0 0 8px rgba(40, 167, 69, 0.5);
+        }
+        .gallery-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover; 
+            display: block;
+        }
+        .video-thumbnail {
+            background-color: #000;
+            color: white;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 2em;
+            position: relative;
+        }
+
+        .video-thumbnail::after {
+            content: "▶"; 
+            position: absolute;
+            font-size: 3em;
+            color: rgba(255, 255, 255, 0.8);
+            text-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+        }
+        
+        @media (max-width: 768px) {
+            .game-details, .game-gallery-section {
+                width: 95%;
+                padding: 15px;
+            }
+
+            .game-info h1 {
+                font-size: 2em;
+            }
+
+            .game-info h2 {
+                font-size: 1.5em;
+            }
+
+            .game-info h3 {
+                font-size: 1em;
+            }
+
+            .gallery-item {
+                width: 100px;
+                height: 75px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .game-details, .game-gallery-section {
+                margin: 10px auto;
+                padding: 10px;
+            }
+            header nav {
+                flex-direction: column;
+            }
+            header nav a {
+                margin: 5px 0;
+            }
+            .image-gallery-container {
+                justify-content: flex-start; 
+            }
+        }

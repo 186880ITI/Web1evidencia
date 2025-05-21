@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="boceto.css">
+    <title>Preguntas Frecuentes</title>
+</head>
+  <style>
+        .faq-container {
+            width: 80%;
+            margin: 20px auto;
+        }
+        .faq-item {
+            margin-bottom: 15px;
+            cursor: pointer;
+        }
+        .faq-question {
+            padding: 10px;
+            background-color: #F1EFEC;
+            border-bottom: 1px solid #D4C9BE;
+        }
+        .faq-answer {
+            padding: 0 10px; 
+            overflow: hidden;
+            max-height: 0;
+            transition: max-height 0.3s ease-out, padding 0.3s ease-out;
+        }
+        .faq-answer.open {
+            max-height: 500px; 
+            padding: 10px; 
+            transition: max-height 0.3s ease-in, padding 0.3s ease-in;
+        }
+    </style>
+<header>
+    <nav>
+        <a rel="icon" type="image/jpg" href="index.html"> <img src="logomarca.jpg" width="50px 30px"> </a>
+        <a href="inicio.html">Inicio</a>
+        <a href="catalogo.html">Catálogo</a>
+        <a href="Compra.html">Compra</a>
+        <a href="soporte.html">Soporte </a>
+        <a href="contacto.html">Universidad</a>
+    </nav>
+</header>
+<body>
+    <div class="faq-container">
+        <div class="faq-item">
+            <div class="pregunta">¿Qué métodos de pago aceptan?</div>
+            <div class="faq-answer">Aceptamos tarjetas de crédito (Visa, Mastercard, American Express), PayPal y transferencias bancarias.</div>
+        </div>
+        <div class="faq-item">
+            <div class="pregunta">¿Cómo se entrega el código o la clave del juego después de la compra?</div>
+            <div class="faq-answer">Una vez que tu pago sea procesado, recibirás un correo electrónico con tu código de activación o enlace de descarga. También podrás encontrarlo en la sección de "Mis Pedidos" de tu cuenta.</div>
+        </div>
+        <div class="faq-item">
+            <div class="pregunta">¿Qué debo hacer si no recibo el código de mi juego después de la compra?</div>
+            <div class="faq-answer">Por favor, verifica tu carpeta de spam o correo no deseado. Si aún no lo encuentras, contáctanos a través de nuestro formulario de soporte o respondiendo a este correo con tu número de pedido.</div>
+        </div>
+        <div class="faq-item">
+            <div class="pregunta">¿Puedo solicitar un reembolso si el juego no funciona en mi computadora o consola?</div>
+            <div class="faq-answer">Nuestra política de reembolsos varía dependiendo del juego y las circunstancias. Por favor, revisa nuestros términos y condiciones o contáctanos para evaluar tu caso específico.</div>
+        </div>
+        <div class="faq-item">
+            <div class="pregunta">¿Qué requisitos mínimos y recomendados necesita mi sistema para correr el juego?</div>
+            <div class="faq-answer">Los requisitos del sistema se encuentran detallados en la página de cada juego, justo debajo de la descripción. Asegúrate de compararlos con las especificaciones de tu equipo.</div>
+        </div>
+        <div class="faq-item">
+            <div class="pregunta">¿Qué hago si el código del juego que recibí ya está usado o no es válido?</div>
+            <div class="faq-answer">Si recibes un código inválido o ya usado, por favor, contáctanos inmediatamente proporcionando una captura de pantalla del error y tu número de pedido para que podamos ayudarte a resolverlo.</div>
+        </div>
+        <div class="faq-item">
+            <div class="pregunta">¿Cómo puedo descargar el juego después de activar el código?</div>
+            <div class="faq-answer">El proceso de descarga depende de la plataforma en la que activaste el código (Steam, Epic Games Store, etc.). Generalmente, encontrarás el juego en tu biblioteca o historial de compras dentro de la plataforma.</div>
+        </div>
+        <div class="faq-item">
+            <div class="pregunta">¿Qué debo hacer si tengo problemas técnicos (errores, pantallazos, etc.) al jugar?</div>
+            <div class="faq-answer">Para problemas técnicos dentro del juego, te recomendamos consultar los foros de la comunidad del juego o la página de soporte del desarrollador. Si el problema persiste y está relacionado con la activación, contáctanos.</div>
+        </div>
+        <div class="faq-item">
+            <div class="pregunta">¿Puedo cambiar la región de mi juego después de la compra?</div>
+            <div class="faq-answer">La posibilidad de cambiar la región de un juego después de la compra es limitada y depende de las políticas de la plataforma de distribución. Por favor, verifica la descripción del producto antes de comprar.</div>
+        </div>
+        <div class="faq-item">
+            <div class="pregunta">¿A dónde puedo contactar si tengo más preguntas o necesito ayuda adicional?</div>
+            <div class="faq-answer">Puedes contactarnos a través de nuestro formulario de contacto en la sección de "Soporte" de nuestra página web o enviando un correo electrónico a soporte@gameon.com.</div>
+        </div>
+    </div>
+
+    <script>
+        const faqItems = document.querySelectorAll('.faq-item');
+
+        faqItems.forEach(item => {
+            const question = item.querySelector('.pregunta');
+            const answer = item.querySelector('.faq-answer');
+
+            question.addEventListener('click', () => {
+                answer.classList.toggle('open');
+            });
+        });
+    </script>
+    </body>
+    <footer> 
+        <div>
+            <script>
+                window.addEventListener('mouseover', initLandbot, { once: true });
+                window.addEventListener('touchstart', initLandbot, { once: true });
+                var myLandbot;
+                function initLandbot() {
+                  if (!myLandbot) {
+                    var s = document.createElement('script');
+                    s.type = "module"
+                    s.async = true;
+                    s.addEventListener('load', function() {
+                      myLandbot = new Landbot.Popup({
+                        configUrl: 'https://storage.googleapis.com/landbot.online/v3/H-2929171-D7O1VIW32BYNR93Y/index.json',
+                      });
+                    });
+                    s.src = 'https://cdn.landbot.io/landbot-3/landbot-3.0.0.mjs';
+                    var x = document.getElementsByTagName('script')[0];
+                    x.parentNode.insertBefore(s, x);
+                  }
+                }
+                </script>
+        </div>
+    </footer>
+</html>

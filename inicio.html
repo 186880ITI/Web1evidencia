@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" type="text/css" href="boceto.css">
+        <link rel="stylesheet" href="fuentes/Big_Shoulders_Inline/BigShouldersInline-VariableFont_opsz,wght.ttf">
+    <title>Inicio - Tu Tienda de Videojuegos</title>
+    <style>
+        .hero-section {
+            background: url('hero-banner-placeholder.jpg') no-repeat center center/cover;
+            color: white;
+            text-align: center;
+            padding: 100px 20px;
+            min-height: 400px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.7);
+        }
+
+        .hero-section h1 {
+            font-size: 3.5em;
+            margin-bottom: 15px;
+        }
+
+        .hero-section p {
+            font-size: 1.3em;
+            max-width: 700px;
+            margin-bottom: 30px;
+        }
+
+        .btn {
+            background-color: #030303;
+            color: white;
+            padding: 12px 25px;
+            text-decoration: none;
+            border-radius: 5px;
+            transition: background-color 0.3s ease;
+            font-size: 1.1em;
+        }
+
+        .btn:hover {
+            background-color: #123458;
+        }
+
+        .content-section {
+            width: 80%;
+            margin: 40px auto;
+            padding: 20px;
+            background-color: white;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+            border-radius: 8px;
+        }
+
+        .content-section h2 {
+            text-align: center;
+            color: #123458;
+            margin-bottom: 30px;
+            font-size: 2em;
+            border-bottom: 2px solid #eee;
+            padding-bottom: 10px;
+        }
+
+        .content-section p {
+            line-height: 1.6;
+            margin-bottom: 15px;
+            text-align: justify;
+        }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 25px;
+            margin-top: 30px;
+            text-align: center;
+        }
+
+        .feature-item {
+            background-color: #e9f5ff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+            transition: transform 0.2s ease;
+        }
+
+        .feature-item:hover {
+            transform: translateY(-5px);
+        }
+
+        .feature-item h3 {
+            color: #333;
+            margin-bottom: 10px;
+            font-size: 1.4em;
+        }
+
+        .feature-item p {
+            font-size: 0.95em;
+            color: #555;
+            text-align: center;
+        }
+
+        footer {
+            background-color: #333;
+            color: white;
+            padding: 20px;
+            text-align: center;
+            margin-top: 50px;
+        }
+        footer p {
+          margin: 5px 0;
+          font-size: 0.9em;
+        }
+
+        @media (max-width: 768px) {
+            .hero-section h1 {
+                font-size: 2.5em;
+            }
+            .hero-section p {
+                font-size: 1em;
+            }
+            .content-section {
+                width: 95%;
+                margin: 20px auto;
+                padding: 15px;
+            }
+            .features-grid {
+                grid-template-columns: 1fr;
+            }
+            nav a {
+                float: none;
+                width: 100%;
+                text-align: left;
+            }
+        }
+    </style>
+</head>
+<header>
+    <nav>
+        <a rel="icon" type="image/jpg" href="index.html"> <img src="logomarca.jpg" width="50px 30px"> </a>
+        <a href="inicio.html">Inicio</a>
+        <a href="catalogo.html">Catálogo</a>
+        <a href="Compra.html">Compra</a>
+        <a href="soporte.html">Soporte </a>
+        <a href="contacto.html">Universidad</a>
+    </nav>
+</header>
+<body>
+    <header class="hero-section">
+        <h1>Tu Próxima Aventura Comienza Aquí</h1>
+        <p>Explora un universo de videojuegos para todas las plataformas. Desde los clásicos atemporales hasta los últimos lanzamientos, ¡encuentra tu próximo desafío!</p>
+        <a href="catalogo.html" class="btn">Explorar Catálogo</a>
+    </header>
+
+    <section class="content-section">
+        <h2>¿Quiénes Somos?</h2>
+        <p>En GAME ON, somos un equipo de apasionados por los videojuegos, dedicados a llevarte la mejor experiencia de compra. Entendemos lo que significa la emoción de un nuevo lanzamiento, la nostalgia de un clásico o la satisfacción de encontrar ese juego perfecto. Nuestra misión es ser tu destino confiable para todo lo relacionado con el gaming, ofreciéndote un catálogo extenso, precios competitivos y un servicio al cliente excepcional.</p>
+        <p>Nacimos de la idea de facilitar el acceso a miles de títulos, conectando a jugadores con las historias y aventuras que aman. ¡Únete a nuestra comunidad!</p>
+    </section>
+
+    <section class="content-section">
+        <h2>¿Qué Hacemos? Tu Tienda de Videojuegos Online</h2>
+        <p>Somos una tienda en línea especializada en la venta de videojuegos para una amplia gama de plataformas. Nos esforzamos por ofrecerte:</p>
+        <div class="features-grid">
+            <div class="feature-item">
+                <h3>Amplio Catálogo</h3>
+                <p>Miles de títulos de todos los géneros: acción, aventura, RPG, estrategia, deportes y más. Desde juegos AAA hasta joyas independientes.</p>
+            </div>
+            <div class="feature-item">
+                <h3>Lanzamientos Recientes</h3>
+                <p>Mantente al día con los últimos lanzamientos y preventas de los juegos más esperados del año.</p>
+            </div>
+            <div class="feature-item">
+                <h3>Precios Competitivos</h3>
+                <p>Trabajamos para ofrecerte las mejores ofertas y descuentos en tus juegos favoritos.</p>
+            </div>
+            <div class="feature-item">
+                <h3>Códigos Digitales</h3>
+                <p>Entrega rápida y segura de códigos digitales para que empieces a jugar en minutos.</p>
+            </div>
+            <div class="feature-item">
+                <h3>Soporte Confiable</h3>
+                <p>Nuestro equipo está listo para ayudarte con cualquier duda o problema, garantizando una experiencia de compra sin igual.</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="content-section">
+        <h2>¡Empieza tu Aventura!</h2>
+        <p style="text-align: center;">Estamos seguros de que encontrarás ese juego que estás buscando. Navega por nuestro catálogo y completa tu compra aquí</p>
+        <p style="text-align: center;">
+            <a href="#catalogo" class="btn">Comprar</a>
+        </p>
+    </section>
+       <footer> 
+        <div>
+            <script>
+                window.addEventListener('mouseover', initLandbot, { once: true });
+                window.addEventListener('touchstart', initLandbot, { once: true });
+                var myLandbot;
+                function initLandbot() {
+                  if (!myLandbot) {
+                    var s = document.createElement('script');
+                    s.type = "module"
+                    s.async = true;
+                    s.addEventListener('load', function() {
+                      myLandbot = new Landbot.Popup({
+                        configUrl: 'https://storage.googleapis.com/landbot.online/v3/H-2929171-D7O1VIW32BYNR93Y/index.json',
+                      });
+                    });
+                    s.src = 'https://cdn.landbot.io/landbot-3/landbot-3.0.0.mjs';
+                    var x = document.getElementsByTagName('script')[0];
+                    x.parentNode.insertBefore(s, x);
+                  }
+                }
+                </script>
+        </div>
+    </footer>
+</body>
+</html>

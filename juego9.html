@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Detalles del Juego</title>
+    <link rel="stylesheet" type="text/css" href="boceto.css">
+    <style>
+
+    </style>
+</head>
+<header>
+    <nav>
+        <a rel="icon" type="image/jpg" href="index.html"> <img src="logomarca.jpg" width="50px" height="30px" alt="Logo"> </a>
+        <a href="inicio.html">Inicio</a>
+        <a href="catalogo.html">Catálogo</a>
+        <a href="Compra.html">Compra</a>
+        <a href="soporte.html">Soporte </a>
+        <a href="contacto.html"> Universidad </a>
+    </nav>
+</header>
+<body>
+    <div class="game-details">
+        <div class="game-image">
+            <img src="deis.jpg" alt="Imagen principal del juego" height="200px" width="300px">
+        </div>
+        <div class="game-info">
+            <h1>Dead island 2</h1>
+            <h2>Acerca de:</h2>
+            <h3>Dead Island es un videojuego de rol de acción y supervivencia con temática de 
+                terror que transporta a los jugadores a la idílica y paradisíaca isla de Banoi, 
+                un complejo turístico tropical que, de repente, se ve invadido por una horda de zombis.
+                 A diferencia de otros juegos de zombis que se centran en el combate a distancia, Dead 
+                 Island pone un fuerte énfasis en el combate cuerpo a cuerpo y la modificación de armas.</h3>
+            <h2>Historia y Ambientación</h2>
+            <h3>La trama comienza con cuatro protagonistas inmunes al virus zombi que se despiertan en diferentes puntos de la isla tras una noche de fiesta. Cada personaje tiene sus propias habilidades y motivaciones, y deben colaborar para sobrevivir y encontrar una forma de escapar de Banoi. La historia se desarrolla a través de misiones que llevan a los jugadores a explorar diversas zonas de la isla, desde complejos hoteleros y playas, hasta selvas, ciudades y alcantarillas, mientras buscan supervivientes, suministros y una cura.
+                <br/>La ambientación tropical contrasta fuertemente con la brutalidad de la invasión zombi, creando una atmósfera única que combina la belleza natural con el horror y la desesperación.</h3>
+                 <h2>Jugabilidad:</h2>
+            <h3>Combate Cuerpo a Cuerpo: Es el núcleo del juego. Los jugadores utilizan una amplia variedad de armas improvisadas (bates, tuberías, machetes, remos, etc.) y de fuego (aunque escasas) para enfrentarse a los zombis. El sistema de combate es visceral, permitiendo desmembrar a los enemigos y sentir el impacto de cada golpe.
+                <br/>- Modificación y Reparación de Armas: Una característica distintiva es la posibilidad de reparar y mejorar las armas encontradas. Se pueden añadir elementos como clavos, electricidad o ácido para aumentar su daño o añadir efectos elementales.
+                <br/>- Elementos RPG: Los cuatro personajes jugables (Logan, Purna, Sam B y Xian Mei) pertenecen a diferentes clases (experto en armas arrojadizas, de fuego, contundentes y afiladas, respectivamente). Cada uno tiene su propio árbol de habilidades que permite a los jugadores personalizar su estilo de juego, mejorando el daño, la resistencia o desbloqueando nuevas habilidades.
+                <br/>- Mundo Abierto y Misiones: La isla de Banoi es un mundo abierto que se va desbloqueando progresivamente. Hay misiones principales que avanzan la historia y numerosas misiones secundarias que recompensan con experiencia, dinero y equipo.
+        </div>
+    </div>
+
+    <div class="game-gallery-section">
+        <h2>Gameplay y Galería</h2>
+        <div class="main-content-viewer" id="mainViewer">
+            <video controls autoplay muted class="responsive-media" id="mainVideo">
+                <source src="videos/di2.mp4" type="video/mp4">
+                Tu navegador no soporta el tag de video.
+            </video>
+            <img src="" alt="Imagen grande de la galería" class="responsive-media" id="mainImage" style="display: none;">
+        </div>
+
+        <div class="image-gallery-container">
+            <div class="gallery-item video-thumbnail active" data-type="video" data-src="videos/di2.mp4">
+                </div>
+            
+            <div class="gallery-item" data-type="image" data-src="galeria/deis2.0.jpg">
+                <img src="galeria/deis2.0.jpg" alt="Miniatura de Galería 1">
+            </div>
+            <div class="gallery-item" data-type="image" data-src="galeria/deis2.1.jpg">
+                <img src="galeria/deis2.1.jpg" alt="Miniatura de Galería 2">
+            </div>
+            <div class="gallery-item" data-type="image" data-src="galeria/deis2.2.jpg">
+                <img src="galeria/deis2.2.jpg" alt="Miniatura de Galería 3">
+            </div>
+            <div class="gallery-item" data-type="image" data-src="galeria/deis2.3.jpg">
+                <img src="galeria/deis2.3.jpg" alt="Miniatura de Galería 4">
+            </div>
+        </div>
+    </div>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const mainVideo = document.getElementById('mainVideo');
+            const mainImage = document.getElementById('mainImage');
+            const galleryItems = document.querySelectorAll('.gallery-item');
+
+            function showContent(type, src) {
+                if (type === 'video') {
+                    mainVideo.style.display = 'block';
+                    mainImage.style.display = 'none';
+                    mainVideo.src = src;
+                    mainVideo.load(); 
+                    mainVideo.play(); 
+                } else if (type === 'image') {
+                    mainVideo.style.display = 'none';
+                    mainVideo.pause(); 
+                    mainVideo.currentTime = 0; 
+                    mainImage.style.display = 'block';
+                    mainImage.src = src;
+                }
+            }
+
+            galleryItems.forEach(item => {
+                item.addEventListener('click', function() {
+                    galleryItems.forEach(el => el.classList.remove('active'));
+                    this.classList.add('active');
+
+                    const type = this.getAttribute('data-type');
+                    const src = this.getAttribute('data-src');
+                    showContent(type, src);
+                });
+            });
+
+            document.querySelector('.gallery-item.video-thumbnail').click(); 
+        });
+    </script>
+</body>
+</html>

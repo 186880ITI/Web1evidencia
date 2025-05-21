@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cuestionario sobre No Impresión de Papel</title>
+  <link rel="stylesheet" type="text/css" href="boceto.css">
+</head>
+<header>
+  <nav>
+      <a rel="icon" type="image/jpg" href="index.html"> <img src="logomarca.jpg" width="50px 30px"> </a>
+      <a href="inicio.html">Inicio</a>
+      <a href="catalogo.html">Catálogo</a>
+      <a href="Compra.html">Compra</a>
+      <a href="contacto.html">Contactos</a>
+      <a href="soporte.html">Soporte </a>
+  </nav>
+</header>
+<body>
+  <h2>Cuestionario de Diagnóstico: Soluciones Ecológicas para No Impresión de Papel</h2>
+  <form id="diagnosticoForm" onsubmit="return validarFormulario()">
+    <div class="pregunta">
+      <label>1. ¿Está familiarizado con el concepto de "oficina sin papel"?</label>
+      <div>
+        <input type="radio" id="familiarSi" name="pregunta1" value="si">
+        <label for="familiarSi">Sí</label>
+      </div>
+      <div>
+        <input type="radio" id="familiarNo" name="pregunta1" value="no">
+        <label for="familiarNo">No</label>
+      </div>
+      <p id="errorPregunta1" class="error-message"></p>
+    </div>
+
+    <div class="pregunta">
+      <label>2. ¿Qué herramientas digitales utiliza actualmente para evitar la impresión de documentos? (Puede seleccionar varias)</label>
+      <div>
+        <input type="checkbox" id="email" name="pregunta2[]" value="email">
+        <label for="email">Correo electrónico</label>
+      </div>
+      <div>
+        <input type="checkbox" id="almacenamientoNube" name="pregunta2[]" value="almacenamientoNube">
+        <label for="almacenamientoNube">Almacenamiento en la nube (Google Drive, Dropbox, etc.)</label>
+      </div>
+      <div>
+        <input type="checkbox" id="herramientasColaboracion" name="pregunta2[]" value="herramientasColaboracion">
+        <label for="herramientasColaboracion">Herramientas de colaboración en línea (Google Docs, Microsoft Teams, etc.)</label>
+      </div>
+      <div>
+        <input type="checkbox" id="firmasDigitales" name="pregunta2[]" value="firmasDigitales">
+        <label for="firmasDigitales">Firmas digitales</label>
+      </div>
+      <div>
+        <input type="checkbox" id="lectoresDigitales" name="pregunta2[]" value="lectoresDigitales">
+        <label for="lectoresDigitales">Lectores digitales de documentos (PDF, ePub)</label>
+      </div>
+      <div>
+        <input type="checkbox" id="otraHerramienta" name="pregunta2[]" value="otraHerramienta">
+        <label for="otraHerramienta">Otra:</label>
+        <input type="text" id="otraHerramientaTexto" name="otraHerramientaTexto" style="width: 200px;">
+      </div>
+      <p id="errorPregunta2" class="error-message"></p>
+    </div>
+
+    <div class="pregunta">
+      <label>3. ¿Qué tanto considera que su flujo de trabajo actual depende de la impresión de documentos?</label>
+      <div>
+        <input type="radio" id="dependenciaNada" name="pregunta3" value="nada">
+        <label for="dependenciaNada">Nada</label>
+      </div>
+      <div>
+        <input type="radio" id="dependenciaPoco" name="pregunta3" value="poco">
+        <label for="dependenciaPoco">Poco</label>
+      </div>
+      <div>
+        <input type="radio" id="dependenciaModerado" name="pregunta3" value="moderado">
+        <label for="dependenciaModerado">Moderado</label>
+      </div>
+      <div>
+        <input type="radio" id="dependenciaMucho" name="pregunta3" value="mucho">
+        <label for="dependenciaMucho">Mucho</label>
+      </div>
+      <p id="errorPregunta3" class="error-message"></p>
+    </div>
+
+    <div class="pregunta">
+      <label>4. ¿Qué desafíos encuentra o anticipa al intentar reducir o eliminar la impresión de papel en su entorno?</label>
+      <textarea id="desafios" name="desafios" rows="4"></textarea>
+    </div>
+
+    <div class="pregunta">
+      <label>5. ¿Qué temas relacionados con la no impresión de papel le gustaría aprender más?</label>
+      <textarea id="intereses" name="intereses" rows="4"></textarea>
+    </div>
+
+    <button type="submit">Enviar Cuestionario</button>
+  </form>
+
+  <script>
+    function validarFormulario() {
+      let valido = true;
+
+      // Validación pregunta 1
+      const respuesta1 = document.querySelector('input[name="pregunta1"]:checked');
+      if (!respuesta1) {
+        document.getElementById("errorPregunta1").textContent = "Por favor, seleccione una opción.";
+        valido = false;
+      } else {
+        document.getElementById("errorPregunta1").textContent = "";
+      }
+
+      // Validación pregunta 2 (al menos una opción debe estar marcada)
+      const respuestas2 = document.querySelectorAll('input[name="pregunta2[]"]:checked');
+      const otraHerramientaTexto = document.getElementById("otraHerramientaTexto").value.trim();
+      if (respuestas2.length === 0 && otraHerramientaTexto === "") {
+        document.getElementById("errorPregunta2").textContent = "Por favor, seleccione al menos una herramienta o especifique otra.";
+        valido = false;
+      } else {
+        document.getElementById("errorPregunta2").textContent = "";
+      }
+
+      // Validación pregunta 3
+      const respuesta3 = document.querySelector('input[name="pregunta3"]:checked');
+      if (!respuesta3) {
+        document.getElementById("errorPregunta3").textContent ="Por favor, seleccione una opción.";
+        valido = false;
+      } else {
+        document.getElementById("errorPregunta3").textContent = "";
+      }
+
+      return valido;
+    }
+
+    // Para la generación del PDF, necesitarías enviar los datos del formulario
+    // a un script del lado del servidor.
+    // Ejemplo (solo ilustrativo, no funcional aquí):
+    /*
+    document.getElementById("diagnosticoForm").addEventListener("submit", function(event) {
+      event.preventDefault(); // Evitar el envío normal del formulario
+
+      const formData = new FormData(this);
+      fetch('/generar-comprobante-pdf', {
+        method: 'POST',
+        body: formData
+      })
+      .then(response => response.blob())
+      .then(blob => {
+        // Crear un enlace de descarga para el PDF
+        const url = window.URL.createObjectURL(blob);
+        const a = document.createElement('a');
+        a.href = url;
+        a.download = 'comprobante_diagnostico.pdf';
+        document.body.appendChild(a);
+        a.click();
+        document.body.removeChild(a);
+        window.URL.revokeObjectURL(url);
+      });
+    });
+    */
+  </script>
+
+</body>
+</html>

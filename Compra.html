@@ -1,0 +1,119 @@
+<!DOCTYPE html> 
+<html>   
+<head>   
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" /> 
+<link rel="stylesheet" type="text/css" href="boceto.css">
+<title> Formulario de compra </title>
+<style> 
+	legend{
+		text-align: justify;
+		text-decoration: dashed;
+	}
+</style>
+</head>
+<body> 
+	<div style=" background-color: rgba(240, 255, 255, 0.5); margin: auto;">
+<header>
+    <nav>
+        <a rel="icon" type="image/jpg" href="index.html"> <img src="logomarca.jpg" width="50px 30px"> </a>
+        <a href="inicio.html">Inicio</a>
+        <a href="catalogo.html">Catálogo</a>
+        <a href="Compra.html">Compra</a>
+        <a href="soporte.html">Soporte </a>
+        <a href="contacto.html">Universidad</a>
+    </nav>
+</header>
+	<section>
+			<form method="post" action="" 
+			enctype="text/plain">
+			<fieldset>
+				<legend>Información del Cliente</legend> 
+				<label for="nombre">
+				Nombre: 
+				</label><br/>
+				<input type="text" maxlength="25" placeholder="Nombre" name="nombre" id="nombre" autofocus/>
+				<label for="ap"> </br>
+				Apellido paterno:
+				</label><br/>
+				<input type="text" maxlength="25" placeholder="Apellido paterno" name="ap" id="ap"/>
+				<label for="am"></br>
+				Apellido materno:
+				</label><br/>
+				<input type="text" maxlength="25" placeholder="Apellido materno" name="am" id="am"/><br/>
+				<label for="user">
+				Nombre de usuario: 
+				</label><br/>
+				<input type="text" maxlength="25" placeholder="Usuario" name="user" id="user"/>
+				<label for="pass"></br>
+				Contraseña:
+				</label><br/>
+				<input type="password" maxlength="25" placeholder="Password" name="pass" id="pass"/></br>
+			</fieldset>
+			<fieldset>
+				<legend>Datos de facturación</legend> 
+				<label for="calle"></br>
+				Calle: 
+				</label><br/>
+				<input type="text" maxlength="25" placeholder="Usuario" name="usuario" id="usuario"/>
+				<label for="numero"></br>
+				Num:
+				</label><br/>
+				<input type="text" name="numero" id="numero" placeholder="Num. Exterior" maxlength="20" />
+				<label for="col"></br>
+				Colonia: 
+				</label><br/>
+				<input type="text" name="col" id="col" placeholder="Colonia"/>
+				<label for="correo"></br>
+				Correo electronico: 
+				</label><br/>
+				<input type="text" maxlength="25" placeholder="E-mail" name="correo" id="correo" />
+				<label for="cp"></br>
+				Código Postal:
+				</label><br/>
+				<input type="number" name="cp" id="cp" placeholder="C.P."/><br/>
+				<label for="rfc"></br>
+				Sitio web: 
+				</label>
+				<input type="text" name="rfc" id="rfc" placeholder="Sitio web"/>
+				</fieldset>
+				<fieldset>
+					<legend>Datos del artículo adquirido</legend> 
+				<label for="marca">Tipo de artículo</label><br/>
+					<select name="marca" id="marca" size="5">
+					<option> Version digital</option>
+					<option> Version física </option>
+					</select><br/>
+
+				<label for="producto">Selecciona tu juego</label><br/>
+
+				<input type="checkbox"/>Super Mario Bros<br/>
+				<input type="checkbox"/>Super Mario Bros 2<br/>
+				<input type="checkbox"/>Super Mario Bros 3<br/>		
+				<input type="checkbox"/>Call of Duty black ops 3<br/>	
+				<input type="checkbox"/>Minecraft<br/>	
+				<input type="checkbox"/>Far Cry 3<br/>	
+				<input type="checkbox"/>Assasin's Creed III<br/>	
+				<input type="checkbox"/>Call of Gruty<br/>
+				<input type="checkbox"/>Dead Island<br/>
+				<input type="checkbox"/>Red dead redemption II<br/>
+				<input type="checkbox"/>Halo 3<br/>
+				<input type="checkbox"/>Metal Gear solid V<br/>
+				<input type="checkbox"/>Fifa 18<br/>
+				<input type="checkbox"/>Hogwarts Legacy<br/>
+
+				<label for="comentarios">Datos adicionales:</label></br>
+				<textarea name="comentarios" id="comentarios"></textarea>
+				<input type="submit" name="enviar" id="enviar" value="Enviar datos">
+				<input type="reset" name="borrar" id="borrar" value="Borrar datos">
+				</fieldset>
+			</form>
+			<p> *NOTA: La dirección de envio será la misma que la dirección de facturación (en caso de ser físico) y la version digital será enviada al correo proporcionado*</p>
+		</section>
+		<footer>
+			<h3>
+			&copy; Distribuidor autorizado de productos de calidad.
+			</h3>
+		</footer>
+	</div>
+</body>
+</html>
