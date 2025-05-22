@@ -7,19 +7,19 @@ body{
 }
 @font-face{
     font-family: Barranav;
-    src: url(fuentes/Barranav/DynaPuff-Bold.ttf); /* Tipos de letra */
+    src: url(DynaPuff-Bold.ttf); /* Tipos de letra */
 }
 @font-face {
     font-family: parrafos;
-    src: url(fuentes/parrafos/DynaPuff-Regular.ttf);
+    src: url(DynaPuff-Regular.ttf);
 }
 @font-face {
     font-family: titulojuegos;
-    src: url(fuentes/titulojuegos/RubikIso-Regular.ttf);
+    src: url(RubikIso-Regular.ttf);
 }
 @font-face {
     font-family: parrafos2;
-    src: url(fuentes/static/RedHatText-Bold.ttf);
+    src: url(RedHatText-Bold.ttf);
 }
 nav{
     background-color: #333; /* barra de navegacion */
