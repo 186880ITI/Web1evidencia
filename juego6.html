@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Detalles del Juego</title>
+    <link rel="stylesheet" type="text/css" href="boceto.css">
+    <style>
+
+    </style>
+</head>
+<header>
+    <nav>
+        <a rel="icon" type="image/jpg" href="index.html"> <img src="logomarca.jpg" width="50px" height="30px" alt="Logo"> </a>
+        <a href="inicio.html">Inicio</a>
+        <a href="catalogo.html">Catálogo</a>
+        <a href="Compra.html">Compra</a>
+        <a href="soporte.html">Soporte </a>
+        <a href="contacto.html"> Universidad </a>
+    </nav>
+</header>
+<body>
+<div class="game-details">
+        <div class="game-image">
+            <img src="fc3.jpg" alt="Imagen 6">
+        </div>
+        <div class="game-info">
+            <h1> Far cry 3</h1>
+                <h2>Acerca de:</h2>
+            <h3>Far Cry 3 es un videojuego de acción-aventura de disparos en primera persona que transporta a los jugadores a un exuberante y peligroso archipiélago tropical conocido como las Islas Rook. El juego es famoso por su inmersivo mundo abierto, su jugabilidad frenética y, sobre todo, por la creación de uno de los villanos más icónicos y memorables de la historia de los videojuegos: Vaas Montenegro. A diferencia de las entregas anteriores que a menudo se sentían más como un "shooter de mundo abierto", Far Cry 3 se centró en una narrativa más personal y en la evolución del protagonista, Jason Brody.</h3>
+                <h2>Historia y Ambientación</h2>
+            <h3>La trama de Far Cry 3 comienza con un grupo de jóvenes y adinerados turistas estadounidenses, incluyendo a Jason Brody y sus amigos, que están de vacaciones en las exóticas Islas Rook. Su aventura de paracaidismo se convierte en una pesadilla cuando son capturados por una banda de piratas y traficantes de esclavos liderada por el sádico y carismático Vaas Montenegro. Jason logra escapar, pero sus amigos quedan prisioneros.</h3>
+                <h2> Características Clave </h2> 
+            <h3>
+                <br/>-Un mundo abierto vibrante y peligroso ambientado en una isla tropical.
+                <br/>-Un villano memorable: Vaas Montenegro, cuya interpretación fue muy elogiada.
+                <br/>-Una historia intensa y madura sobre la transformación del protagonista.
+                <br/>-Énfasis en la supervivencia, la caza y la fabricación de objetos.
+                <br/>-Un sistema de habilidades basado en tatuajes.
+                <br/>-Modos multijugador competitivo y cooperativo.</h3>                 
+                <h2>Jugabilidad:</h2>
+            <h3>Far Cry 3 combina elementos de disparos en primera persona, acción-aventura y un ligero toque de RPG en un mundo abierto:</h3>
+               <h3> <br/>-Libertad de Aproximación: Los jugadores tienen la libertad de abordar los objetivos de la forma que deseen: sigilo total (utilizando cuchillos, arcos y neutralizaciones silenciosas), asalto frontal (con armas de fuego y explosivos) o una mezcla de ambos.
+                    <br/>-Combate y Armas: Un arsenal diverso de armas de fuego (pistolas, subfusiles, fusiles de asalto, escopetas, francotiradores), arcos y armas arrojadizas (granadas, C4). El combate es visceral y satisfactorio.
+                    <br/>-Caza y Crafteo: Para mejorar las habilidades de Jason y fabricar equipo (como más espacio para armas o munición), los jugadores deben cazar animales específicos y recolectar sus pieles.
+                    <br/>-Sistema de Progresión (Habilidades y Tatuajes): Jason gana puntos de experiencia al completar misiones y liberar puestos de avanzada. Estos puntos se usan para desbloquear habilidades en tres árboles: El Tiburón (asalto), La Garza (sigilo) y La Araña (supervivencia y curación). Cada habilidad desbloqueada se representa como una parte de un tatuaje en el brazo de Jason.</h3>
+        </div>
+    </div>
+
+    <div class="game-gallery-section">
+        <h2>Gameplay y Galería</h2>
+        <div class="main-content-viewer" id="mainViewer">
+            <video controls autoplay muted class="responsive-media" id="mainVideo">
+                <source src="fc3.mp4" type="video/mp4">
+                Tu navegador no soporta el tag de video.
+            </video>
+            <img src="" alt="Imagen grande de la galería" class="responsive-media" id="mainImage" style="display: none;">
+        </div>
+
+        <div class="image-gallery-container">
+            <div class="gallery-item video-thumbnail active" data-type="video" data-src="fc3.mp4">
+                </div>
+            
+            <div class="gallery-item" data-type="image" data-src="fc3.0.jpg">
+                <img src="fc3.0.jpg" alt="Miniatura de Galería 1">
+            </div>
+            <div class="gallery-item" data-type="image" data-src="fc3.1.jpg">
+                <img src="fc3.1.jpg" alt="Miniatura de Galería 2">
+            </div>
+            <div class="gallery-item" data-type="image" data-src="fc3.2.jpg">
+                <img src="fc3.2.jpg" alt="Miniatura de Galería 3">
+            </div>
+            <div class="gallery-item" data-type="image" data-src="fc3.3.jpg">
+                <img src="fc3.3.jpg" alt="Miniatura de Galería 4">
+            </div>
+        </div>
+    </div>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const mainVideo = document.getElementById('mainVideo');
+            const mainImage = document.getElementById('mainImage');
+            const galleryItems = document.querySelectorAll('.gallery-item');
+
+            function showContent(type, src) {
+                if (type === 'video') {
+                    mainVideo.style.display = 'block';
+                    mainImage.style.display = 'none';
+                    mainVideo.src = src;
+                    mainVideo.load(); 
+                    mainVideo.play(); 
+                } else if (type === 'image') {
+                    mainVideo.style.display = 'none';
+                    mainVideo.pause(); 
+                    mainVideo.currentTime = 0; 
+                    mainImage.style.display = 'block';
+                    mainImage.src = src;
+                }
+            }
+
+            galleryItems.forEach(item => {
+                item.addEventListener('click', function() {
+                    galleryItems.forEach(el => el.classList.remove('active'));
+                    this.classList.add('active');
+
+                    const type = this.getAttribute('data-type');
+                    const src = this.getAttribute('data-src');
+                    showContent(type, src);
+                });
+            });
+
+            document.querySelector('.gallery-item.video-thumbnail').click(); 
+        });
+    </script>
+</body>
+</html>

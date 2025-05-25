@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Detalles del Juego</title>
+    <link rel="stylesheet" type="text/css" href="boceto.css">
+    <style>
+
+    </style>
+</head>
+<header>
+    <nav>
+        <a rel="icon" type="image/jpg" href="index.html"> <img src="logomarca.jpg" width="50px" height="30px" alt="Logo"> </a>
+        <a href="inicio.html">Inicio</a>
+        <a href="catalogo.html">Catálogo</a>
+        <a href="Compra.html">Compra</a>
+        <a href="soporte.html">Soporte </a>
+        <a href="contacto.html"> Universidad </a>
+    </nav>
+</header>
+<body>
+    <div class="game-details">
+        <div class="game-image">
+            <img src="fifa18.jpg" alt="Imagen principal del juego" height="200px" width="300px">
+        </div>
+        <div class="game-info">
+            <h1>Fifa 18</h1>
+                <h2>Acerca de:</h2>
+            <h3>FIFA 18 es la 25.ª entrega de la popular serie de videojuegos de fútbol de EA Sports. Como cada año, busca recrear la experiencia del fútbol profesional con licencias oficiales de ligas, equipos y jugadores de todo el mundo. El juego se destacó por sus mejoras en el realismo visual, la inmersión y la continuación de su exitoso modo historia, "El Trayecto". Cristiano Ronaldo fue la estrella de la portada.</h3>
+                <h2>Historia y Ambientación</h2>
+            <h3>FIFA 18 es la 25.ª entrega de la popular serie de videojuegos de fútbol de EA Sports. Como cada año, busca recrear la experiencia del fútbol profesional con licencias oficiales de ligas, equipos y jugadores de todo el mundo. El juego se destacó por sus mejoras en el realismo visual, la inmersión y la continuación de su exitoso modo historia, "El Trayecto". Cristiano Ronaldo fue la estrella de la portada.</h3>
+                <h2> Características Clave </h2> 
+          <h3><br/>- Real Player Motion Technology: Mejoras significativas en las animaciones y el movimiento de los jugadores.
+                <br/>-El Trayecto: Hunter Regresa: La segunda temporada del modo historia cinemático.
+                <br/>-FIFA Ultimate Team: Con nuevas leyendas (Íconos) y modos de juego.</h3>
+        
+                <h2>Jugabilidad:</h2>
+            <h3>FIFA 18 introdujo varias mejoras en la jugabilidad para ofrecer una experiencia más fluida y realista:</h3>
+               <h3><br/>- Tecnología Real Player Motion: Esta fue una de las adiciones más significativas. Un nuevo sistema de animación que buscaba ofrecer una mayor fluidez en el movimiento de los jugadores, con animaciones más realistas para regates, carreras y giros, capturadas de jugadores reales.
+                <br/>-Personalidad de los Jugadores: La forma en que los jugadores se movían y reaccionaban en el campo reflejaba más fielmente sus contrapartes de la vida real. Por ejemplo, las carreras y regates característicos de estrellas como Cristiano Ronaldo o Messi se veían y sentían más auténticos.
+                <br/>-Modo Carrera: Permitió a los jugadores tomar el control de un club como mánager, gestionando traspasos, desarrollo de jugadores y tácticas.</h3>
+        </div>
+    </div>
+
+    <div class="game-gallery-section">
+        <h2>Gameplay y Galería</h2>
+        <div class="main-content-viewer" id="mainViewer">
+            <video controls autoplay muted class="responsive-media" id="mainVideo">
+                <source src="fifa18.mp4" type="video/mp4">
+                Tu navegador no soporta el tag de video.
+            </video>
+            <img src="" alt="Imagen grande de la galería" class="responsive-media" id="mainImage" style="display: none;">
+        </div>
+
+        <div class="image-gallery-container">
+            <div class="gallery-item video-thumbnail active" data-type="video" data-src="fifa18.mp4">
+                </div>
+            
+            <div class="gallery-item" data-type="image" data-src="f18.0.jpg">
+                <img src="f18.0.jpg" alt="Miniatura de Galería 1">
+            </div>
+            <div class="gallery-item" data-type="image" data-src="f18.1.jpg">
+                <img src="f18.1.jpg" alt="Miniatura de Galería 2">
+            </div>
+            <div class="gallery-item" data-type="image" data-src="f18.2.jpg">
+                <img src="f18.2.jpg" alt="Miniatura de Galería 3">
+            </div>
+            <div class="gallery-item" data-type="image" data-src="f18.3.jpg ">
+                <img src="f18.3.jpg" alt="Miniatura de Galería 4">
+            </div>
+        </div>
+    </div>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const mainVideo = document.getElementById('mainVideo');
+            const mainImage = document.getElementById('mainImage');
+            const galleryItems = document.querySelectorAll('.gallery-item');
+
+            function showContent(type, src) {
+                if (type === 'video') {
+                    mainVideo.style.display = 'block';
+                    mainImage.style.display = 'none';
+                    mainVideo.src = src;
+                    mainVideo.load(); 
+                    mainVideo.play(); 
+                } else if (type === 'image') {
+                    mainVideo.style.display = 'none';
+                    mainVideo.pause(); 
+                    mainVideo.currentTime = 0; 
+                    mainImage.style.display = 'block';
+                    mainImage.src = src;
+                }
+            }
+
+            galleryItems.forEach(item => {
+                item.addEventListener('click', function() {
+                    galleryItems.forEach(el => el.classList.remove('active'));
+                    this.classList.add('active');
+
+                    const type = this.getAttribute('data-type');
+                    const src = this.getAttribute('data-src');
+                    showContent(type, src);
+                });
+            });
+
+            document.querySelector('.gallery-item.video-thumbnail').click(); 
+        });
+    </script>
+</body>
+</html>

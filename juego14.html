@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Detalles del Juego</title>
+    <link rel="stylesheet" type="text/css" href="boceto.css">
+    <style>
+
+    </style>
+</head>
+<header>
+    <nav>
+        <a rel="icon" type="image/jpg" href="index.html"> <img src="logomarca.jpg" width="50px" height="30px" alt="Logo"> </a>
+        <a href="inicio.html">Inicio</a>
+        <a href="catalogo.html">Catálogo</a>
+        <a href="Compra.html">Compra</a>
+        <a href="soporte.html">Soporte </a>
+        <a href="contacto.html"> Universidad </a>
+    </nav>
+</header>
+<body>
+    <div class="game-details">
+        <div class="game-image">
+            <img src="hogw.png" alt="Imagen principal del juego" height="200px" width="300px">
+        </div>
+        <div class="game-info">
+            <h1>Hogwarts Legacy</h1>
+                <h2>Acerca de:</h2>
+            <h3>Hogwarts Legacy es un esperado videojuego de rol de acción de mundo abierto ambientado en el universo mágico de Harry Potter. A diferencia de los juegos anteriores basados en las películas o libros, este título es una historia original que tiene lugar a finales del siglo XIX, mucho antes de los eventos de Harry Potter, lo que permite a los jugadores experimentar la vida como un estudiante en Hogwarts de una manera fresca y explorar un mundo mágico familiar pero inexplorado.</h3>
+                <h2>Historia y Ambientación</h2>
+            <h3>El juego te coloca en el papel de un estudiante que ingresa a Hogwarts en el quinto año, un detalle inusual, y que posee una habilidad única para percibir y dominar la magia antigua. La historia principal gira en torno a un misterio que involucra una antigua rebelión de duendes y una figura oscura que busca aprovechar esta magia. Los jugadores descubrirán conspiraciones, enfrentarán peligros y desentrañarán los secretos del mundo mágico, mientras asisten a clases, aprenden hechizos, preparan pociones y dominen sus habilidades.</h3>
+                <h2> Características Clave </h2> 
+          <h3><br/>- Una historia original en el universo mágico de Harry Potter, ambientada antes de los libros.
+                <br/>-Combate mágico profundo y personalizable con una amplia variedad de hechizos.
+                <br/>-La Sala de los Menesteres para personalización y gestión.</h3>
+        
+                <h2>Jugabilidad:</h2>
+            <h3>Hogwarts Legacy es un RPG de acción con mecánicas de mundo abierto y personalización profunda:</h3>
+               <h3><br/>- Creación de Personajes: Los jugadores pueden crear y personalizar su propio avatar, eligiendo su aspecto, voz y, crucialmente, su casa de Hogwarts.
+                <br/>-Clases y Aprendizaje: Asistir a clases es fundamental para aprender nuevos hechizos, elaborar pociones y mejorar habilidades. Cada hechizo tiene un uso en combate, exploración o resolución de puzles.
+                <br/>-Exploración y Secretos: El mundo está lleno de puzles, coleccionables y secretos ocultos, animando a los jugadores a explorar cada rincón.</h3>
+        </div>
+    </div>
+
+    <div class="game-gallery-section">
+        <h2>Gameplay y Galería</h2>
+        <div class="main-content-viewer" id="mainViewer">
+            <video controls autoplay muted class="responsive-media" id="mainVideo">
+                <source src="hog.mp4" type="video/mp4">
+                Tu navegador no soporta el tag de video.
+            </video>
+            <img src="" alt="Imagen grande de la galería" class="responsive-media" id="mainImage" style="display: none;">
+        </div>
+
+        <div class="image-gallery-container">
+            <div class="gallery-item video-thumbnail active" data-type="video" data-src="hog.mp4">
+                </div>
+            
+            <div class="gallery-item" data-type="image" data-src="hog.0.jpg">
+                <img src="hog.0.jpg" alt="Miniatura de Galería 1">
+            </div>
+            <div class="gallery-item" data-type="image" data-src="hog.1.jpg">
+                <img src="hog.1.jpg" alt="Miniatura de Galería 2">
+            </div>
+            <div class="gallery-item" data-type="image" data-src="hog.2.jpg">
+                <img src="hog.2.jpg" alt="Miniatura de Galería 3">
+            </div>
+            <div class="gallery-item" data-type="image" data-src="hog.3.jpg ">
+                <img src="hog.3.jpg" alt="Miniatura de Galería 4">
+            </div>
+        </div>
+    </div>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const mainVideo = document.getElementById('mainVideo');
+            const mainImage = document.getElementById('mainImage');
+            const galleryItems = document.querySelectorAll('.gallery-item');
+
+            function showContent(type, src) {
+                if (type === 'video') {
+                    mainVideo.style.display = 'block';
+                    mainImage.style.display = 'none';
+                    mainVideo.src = src;
+                    mainVideo.load(); 
+                    mainVideo.play(); 
+                } else if (type === 'image') {
+                    mainVideo.style.display = 'none';
+                    mainVideo.pause(); 
+                    mainVideo.currentTime = 0; 
+                    mainImage.style.display = 'block';
+                    mainImage.src = src;
+                }
+            }
+
+            galleryItems.forEach(item => {
+                item.addEventListener('click', function() {
+                    galleryItems.forEach(el => el.classList.remove('active'));
+                    this.classList.add('active');
+
+                    const type = this.getAttribute('data-type');
+                    const src = this.getAttribute('data-src');
+                    showContent(type, src);
+                });
+            });
+
+            document.querySelector('.gallery-item.video-thumbnail').click(); 
+        });
+    </script>
+</body>
+</html>

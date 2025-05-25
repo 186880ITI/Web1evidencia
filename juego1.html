@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Detalles del Juego</title>
+    <link rel="stylesheet" type="text/css" href="boceto.css">
+    <style>
+
+    </style>
+</head>
+<header>
+    <nav>
+        <a rel="icon" type="image/jpg" href="index.html"> <img src="logomarca.jpg" width="50px" height="30px" alt="Logo"> </a>
+        <a href="inicio.html">Inicio</a>
+        <a href="catalogo.html">Catálogo</a>
+        <a href="Compra.html">Compra</a>
+        <a href="soporte.html">Soporte </a>
+        <a href="contacto.html"> Universidad </a>
+    </nav>
+</header>
+<body>
+    <div class="game-details">
+        <div class="game-image">
+            <img src="img4.jfif" alt="Imagen principal del juego" height="200px" width="300px">
+        </div>
+        <div class="game-info">
+            <h1> Call Of Duty Black Ops 3</h1>
+                <h2>Acerca de:</h2>
+            <h3>Call of Duty: Black Ops III representa la tercera entrega principal de la subsaga "Black Ops" dentro de la franquicia Call of Duty, desarrollada por Treyarch. Fue lanzado en 2015 y buscó llevar la serie a un futuro distópico y tecnológicamente avanzado, ofreciendo una experiencia completa que abarcaba una campaña narrativa, un robusto modo multijugador y el popular modo Zombis, cada uno con su propio enfoque y elementos distintivos.</h3>
+                <h2>Historia y Ambientación</h2>
+            <h3>Black Ops III se ambienta en el año 2065, aproximadamente 40 años después de los eventos de Black Ops II. El mundo ha cambiado drásticamente debido a los efectos del cambio climático y una dependencia cada vez mayor de la tecnología, lo que ha escalado a una nueva y compleja Guerra Fría entre facciones. En este futuro, la tecnología militar ha avanzado exponencialmente, con soldados mejorados cibernéticamente y una red global de datos y comunicación conocida como el Direct Neural Interface (DNI).</h3>
+                <h2> Características Clave </h2> 
+            <h3>
+                <br/>-Campaña para un jugador con cooperativo para 4 jugadores.
+                <br/>-Multijugador dinámico con un nuevo sistema de movimiento basado en especialistas.
+                <br/>-Modo Zombis con una historia independiente y mapas complejos.
+                <br/>-Amplias opciones de personalización para el personaje y las armas.
+                <br/>-Contenido descargable posterior al lanzamiento, incluyendo mapas multijugador y de Zombis, que expandieron significativamente la experiencia.
+                <br/>-Ambientación futurista que explora el transhumanismo y la guerra cibernética.</h3>
+                        
+                <h2>Jugabilidad:</h2>
+            <h3>Black Ops III se esforzó por innovar en varios aspectos de su jugabilidad:</h3>
+               <h3> <br/>- Campaña para un Jugador (y Cooperativa): Por primera vez en la serie Black Ops, la campaña podía jugarse de forma cooperativa con hasta cuatro jugadores, lo que añadía una dimensión estratégica y de trabajo en equipo. Los jugadores podían personalizar a su personaje y elegir entre una variedad de habilidades cibernéticas que influían en el combate y la exploración.
+                    <br/>-Modo Multijugador: El multijugador fue un foco principal y muy innovador para su época. Introdujo un nuevo "sistema de movimiento basado en especialistas", que permitía a los jugadores correr por las paredes, deslizarse (con una suerte de propulsores) y encadenar movimientos de manera fluida. Esto añadió una capa de verticalidad y estrategia al combate.
+                    <br/>-Especialistas: Los jugadores podían elegir entre varios "Especialistas", personajes únicos con sus propias armas y habilidades especiales, que se cargaban durante la partida, permitiendo momentos clave que podían cambiar el rumbo de un enfrentamiento.
+                    <br/>-Gunsmith: Un sistema de personalización de armas profundizado que permitía a los jugadores modificar sus armas de manera más visual y funcional.
+                    <br/>-Modo Zombis: El popular modo Zombis regresó con una historia independiente y sus propios personajes y mapas. En Black Ops III, el modo Zombis fue el más ambicioso hasta la fecha, con mapas más grandes, tramas intrincadas (a menudo con elementos de "easter eggs" y secretos complejos), y un enfoque en personajes con trasfondos oscuros. Este modo es uno de los favoritos de los fans por su jugabilidad desafiante y su narrativa oculta.</h3>
+        </div>
+    </div>
+
+
+    <div class="game-gallery-section">
+        <h2>Gameplay y Galería</h2>
+        <div class="main-content-viewer" id="mainViewer">
+            <video controls autoplay muted class="responsive-media" id="mainVideo">
+                <source src="bo3.mp4" type="video/mp4">
+                Tu navegador no soporta el tag de video.
+            </video>
+            <img src="" alt="Imagen grande de la galería" class="responsive-media" id="mainImage" style="display: none;">
+        </div>
+
+        <div class="image-gallery-container">
+            <div class="gallery-item video-thumbnail active" data-type="video" data-src="bo3.mp4">
+                </div>
+            
+            <div class="gallery-item" data-type="image" data-src="bo1.0.jpg">
+                <img src="bo1.0.jpg" alt="Miniatura de Galería 1">
+            </div>
+            <div class="gallery-item" data-type="image" data-src="bo1.1.jpg">
+                <img src="bo1.1.jpg" alt="Miniatura de Galería 2">
+            </div>
+            <div class="gallery-item" data-type="image" data-src="bo1.2.jpg">
+                <img src="bo1.2.jpg" alt="Miniatura de Galería 3">
+            </div>
+            <div class="gallery-item" data-type="image" data-src="bo1.3.jpg">
+                <img src="bo1.3.jpg" alt="Miniatura de Galería 4">
+            </div>
+        </div>
+    </div>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const mainVideo = document.getElementById('mainVideo');
+            const mainImage = document.getElementById('mainImage');
+            const galleryItems = document.querySelectorAll('.gallery-item');
+
+            function showContent(type, src) {
+                if (type === 'video') {
+                    mainVideo.style.display = 'block';
+                    mainImage.style.display = 'none';
+                    mainVideo.src = src;
+                    mainVideo.load(); 
+                    mainVideo.play(); 
+                } else if (type === 'image') {
+                    mainVideo.style.display = 'none';
+                    mainVideo.pause(); 
+                    mainVideo.currentTime = 0; 
+                    mainImage.style.display = 'block';
+                    mainImage.src = src;
+                }
+            }
+
+            galleryItems.forEach(item => {
+                item.addEventListener('click', function() {
+                    galleryItems.forEach(el => el.classList.remove('active'));
+                    this.classList.add('active');
+
+                    const type = this.getAttribute('data-type');
+                    const src = this.getAttribute('data-src');
+                    showContent(type, src);
+                });
+            });
+
+            document.querySelector('.gallery-item.video-thumbnail').click(); 
+        });
+    </script>
+</body>
+</html>

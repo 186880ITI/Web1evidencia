@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Detalles del Juego</title>
+    <link rel="stylesheet" type="text/css" href="boceto.css">
+    <style>
+
+    </style>
+</head>
+<header>
+    <nav>
+        <a rel="icon" type="image/jpg" href="index.html"> <img src="logomarca.jpg" width="50px" height="30px" alt="Logo"> </a>
+        <a href="inicio.html">Inicio</a>
+        <a href="catalogo.html">Catálogo</a>
+        <a href="Compra.html">Compra</a>
+        <a href="soporte.html">Soporte </a>
+        <a href="contacto.html"> Universidad </a>
+    </nav>
+</header>
+<body>
+    <div class="game-details">
+        <div class="game-image">
+            <img src="mgsv.jpg" alt="Imagen principal del juego" height="200px" width="300px">
+        </div>
+        <div class="game-info">
+            <h1>Metal Gear Solid V: The phantom pain</h1>
+            <h2>Acerca de:</h2>
+            <h3>Metal Gear Solid V: The Phantom Pain (MGSV: TPP) es la última entrega de la aclamada saga Metal Gear Solid dirigida y escrita por Hideo Kojima. Es un juego de sigilo de mundo abierto que sirve como precuela de los eventos del Metal Gear Solid original y de la mayoría de los juegos de la serie. La historia sigue a Venom Snake (también conocido como Punished Snake o Big Boss) nueve años después de los eventos de Metal Gear Solid V: Ground Zeroes, mientras emerge de un coma y busca venganza contra quienes destruyeron su anterior organización, Militaires Sans Frontières.</h3>
+            <h2>Historia y Ambientación</h2>
+            <h3>La trama de MGSV: TPP es compleja y oscura, explorando temas como la venganza, la identidad, las consecuencias de la guerra y la pérdida del "fantasma" (el miembro fantasma de una extremidad o una parte de la identidad). Tras el ataque a su base y su coma, Venom Snake se convierte en el líder de una nueva organización paramilitar, Diamond Dogs. Su objetivo es establecer una base en el mar, conocida como Mother Base, y reconstruir su fuerza para enfrentar a la misteriosa organización XOF, liderada por Skull Face, quien parece tener la intención de erradicar la cultura y el idioma a nivel global.</h3>
+            <h2> El juego se desarrolla en dos grandes mapas de mundo abierto:</h2> 
+            <h3>-Afganistán (época de la Guerra Afgano-Soviética): Un entorno desolado y montañoso, lleno de bases soviéticas y puestos de avanzada.<br/>
+                -África Central: Una región más exuberante y selvática, con aldeas, ríos y bases militares.</h3>
+                <h2>Jugabilidad:</h2>
+            <h3>MGSV: TPP revoluciona la fórmula tradicional de Metal Gear Solid al adoptar un diseño de mundo abierto, lo que permite una flexibilidad sin precedentes en cómo se abordan las misiones:</h3>
+               <h3><br/>- Sigilo Táctico de Mundo Abierto: Los jugadores tienen la libertad de elegir cómo infiltrarse en los campamentos enemigos, cuándo operar (día o noche), y qué equipo y compañeros llevar.
+                <br/>-Compañeros (Buddies): Venom Snake puede llevar a varios compañeros en las misiones, cada uno con habilidades únicas: D-Dog (un perro lobo para rastrear y detectar enemigos), Quiet (una francotiradora con habilidades sobrenaturales), D-Horse (un caballo para un movimiento rápido) y D-Walker (un bípedo robotizado para combate o transporte).
+                <br/>-Mother Base Management: Un componente central del juego es la gestión y expansión de Mother Base. Los jugadores pueden reclutar soldados y especialistas del campo de batalla (usando el sistema Fulton de extracción), asignarlos a diferentes unidades (combate, I+D, apoyo, etc.) para desarrollar nuevas armas y gadgets, y obtener recursos.</h3>
+        </div>
+    </div>
+
+    <div class="game-gallery-section">
+        <h2>Gameplay y Galería</h2>
+        <div class="main-content-viewer" id="mainViewer">
+            <video controls autoplay muted class="responsive-media" id="mainVideo">
+                <source src="mgs.mp4" type="video/mp4">
+                Tu navegador no soporta el tag de video.
+            </video>
+            <img src="" alt="Imagen grande de la galería" class="responsive-media" id="mainImage" style="display: none;">
+        </div>
+
+        <div class="image-gallery-container">
+            <div class="gallery-item video-thumbnail active" data-type="video" data-src="mgs.mp4">
+                </div>
+            
+            <div class="gallery-item" data-type="image" data-src="mg.0.jpg">
+                <img src="mg.0.jpg" alt="Miniatura de Galería 1">
+            </div>
+            <div class="gallery-item" data-type="image" data-src="mg.2.jpg">
+                <img src="mg.2.jpg" alt="Miniatura de Galería 2">
+            </div>
+            <div class="gallery-item" data-type="image" data-src="mg.1.jpg">
+                <img src="mg.1.jpg" alt="Miniatura de Galería 3">
+            </div>
+            <div class="gallery-item" data-type="image" data-src="mg.3.jpg ">
+                <img src="mg.3.jpg" alt="Miniatura de Galería 4">
+            </div>
+        </div>
+    </div>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const mainVideo = document.getElementById('mainVideo');
+            const mainImage = document.getElementById('mainImage');
+            const galleryItems = document.querySelectorAll('.gallery-item');
+
+            function showContent(type, src) {
+                if (type === 'video') {
+                    mainVideo.style.display = 'block';
+                    mainImage.style.display = 'none';
+                    mainVideo.src = src;
+                    mainVideo.load(); 
+                    mainVideo.play(); 
+                } else if (type === 'image') {
+                    mainVideo.style.display = 'none';
+                    mainVideo.pause(); 
+                    mainVideo.currentTime = 0; 
+                    mainImage.style.display = 'block';
+                    mainImage.src = src;
+                }
+            }
+
+            galleryItems.forEach(item => {
+                item.addEventListener('click', function() {
+                    galleryItems.forEach(el => el.classList.remove('active'));
+                    this.classList.add('active');
+
+                    const type = this.getAttribute('data-type');
+                    const src = this.getAttribute('data-src');
+                    showContent(type, src);
+                });
+            });
+
+            document.querySelector('.gallery-item.video-thumbnail').click(); 
+        });
+    </script>
+</body>
+</html>
